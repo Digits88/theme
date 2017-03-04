@@ -46,7 +46,7 @@ function affwp_theme_sale_notice_active() {
 
 	if ( $posts ) {
 		foreach ( $posts as $post ) {
-			if ( 'publish' === $post->post_status ) {
+			if ( 'publish' === $post->post_status && get_post_meta( $post->ID, '_enabled', true ) ) {
 				$found = true;
 			}
 		}
