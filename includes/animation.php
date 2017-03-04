@@ -186,6 +186,10 @@ add_action( 'wp_enqueue_scripts', 'affwp_theme_enqueue_animation_scripts' );
  */
 function affwp_theme_animation_affiliate_landing_pages_add_on() {
 
+	if ( ! is_singular() ) {
+		return;
+	}
+	
 	$post = get_post( get_the_ID() );
 
 	if ( ! (
@@ -275,6 +279,10 @@ add_action( 'wp_footer', 'affwp_theme_animation_affiliate_landing_pages_add_on',
  */
 function affwp_theme_animation_rest_api_add_on() {
 
+	if ( ! is_singular() ) {
+		return;
+	}
+
 	$post = get_post( get_the_ID() );
 
 	if ( ! (
@@ -346,6 +354,10 @@ add_action( 'wp_footer', 'affwp_theme_animation_rest_api_add_on', 100 );
  * Loads the animation code for the product update posts
  */
 function affwp_theme_animation_product_update() {
+
+	if ( ! is_singular() ) {
+		return;
+	}
 
 	$post = get_post( get_the_ID() );
 
