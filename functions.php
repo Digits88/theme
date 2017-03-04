@@ -9,7 +9,7 @@ if ( ! defined( 'AFFWP_THEME_INCLUDES_DIR' ) ) {
 }
 
 if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
-	define( 'AFFWP_THEME_VERSION', '1.4.6' );
+	define( 'AFFWP_THEME_VERSION', '1.4.7' );
 }
 
 function themedd_styles() {
@@ -33,6 +33,7 @@ function affwp_theme_setup() {
 	add_post_type_support( 'download', 'subtitles' );
 
 	// custom stuff
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'countdown.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'account.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'changelog.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'home.php' );
