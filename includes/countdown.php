@@ -84,7 +84,7 @@ function affwp_theme_countdown_shortcode( $atts, $content = null ) {
 		return $content;
 	}
 
-	$content = affp_theme_get_countdown( $end_date );
+	$content = affwp_theme_get_countdown( $end_date );
 
 	return $content;
 }
@@ -97,7 +97,7 @@ add_shortcode( 'countdown', 'affwp_theme_countdown_shortcode' );
  *
  * @return string
  */
-function affp_theme_get_countdown( $end_date = '' ) {
+function affwp_theme_get_countdown( $end_date = '' ) {
 
 	if ( empty( $end_date ) ) {
 		return;
