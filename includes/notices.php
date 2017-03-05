@@ -140,7 +140,7 @@ add_action( 'themedd_site_before', 'affwp_theme_discount_success' );
  * @since  1.4.7
  */
 function affwp_theme_notices_add_meta_box() {
-	add_meta_box( 'affwp_theme_alp_settings', 'Sale Notice', 'affwp_theme_notices_sale_meta_box', array( 'notices' ), 'side', 'default' );
+	add_meta_box( 'affwp_theme_sale_notice', 'Sale Notice', 'affwp_theme_notices_sale_meta_box', array( 'notices' ), 'side', 'default' );
 }
 add_action( 'add_meta_boxes', 'affwp_theme_notices_add_meta_box' );
 
