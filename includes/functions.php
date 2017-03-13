@@ -91,7 +91,7 @@ function affwp_theme_was_sale_purchase() {
 		if (
 			function_exists( 'affwpcf_discount_ids' ) &&
 			in_array( $discount_id, affwpcf_discount_ids() ) && // make sure discount exists in the discount array
-			edd_is_discount_started( $discount_id ) &&          // make sure discount has started
+			edd_is_discount_started( $discount_id, false ) &&   // make sure discount has started, don't set error at checkout
 			edd_is_discount_active( $discount_id ) &&           // make sure discount is active
 			! edd_is_discount_expired( $discount_id )           // make sure discount has not expired
 		) {
