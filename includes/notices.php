@@ -18,8 +18,8 @@ function affwp_theme_display_notice() {
 		return;
 	}
 
-	// Don't show notice if on checkout or purchase confirmation page.
-	if ( edd_is_checkout() || edd_is_success_page() ) {
+	// Don't show notice on purchase confirmation page.
+	if ( edd_is_success_page() ) {
 		return;
 	}
 
