@@ -1,11 +1,9 @@
-// tabs for account and affiliate area page
+// Account styling
+// Also styles AffiliateWP
 
-// .affiliate-area #primary {
-// 	padding-left: 0;
-// 	padding-right: 0;
-// }
-
-
+section.account .wrapper {
+	max-width: 1188px;
+}
 
 .account-nav {
 	margin-bottom: 1rem;
@@ -16,23 +14,30 @@
 	padding-right: 0;
 }
 
+.account-content table:last-child {
+	margin-bottom: 0;
+}
 
 .account-nav ul {
 	list-style-type: none;
 	margin: 0;
 
 	li {
-
 		position: relative;
 		display: inline-block;
+		margin-bottom: 0;
 	}
 
 	a {
         display: inline-block;
-    //    padding: 0.5rem 1rem;
 		margin-right: 0.5rem;
 		font-size: 1rem;
+		color: @account-tab-link-color;
     }
+
+	a:hover {
+		color: @account-tab-link-hover-color;
+	}
 
 	.affwp-affiliate-dashboard-tab.active,
 	.ui-tabs-active {
@@ -41,21 +46,14 @@
 
 	.affwp-affiliate-dashboard-tab.active a,
     .ui-tabs-active a {
-        color: @link-hover-color;
-	//	box-shadow: 4px 0 0 0px @secondary-color inset;
+        color: @account-tab-link-active-color;
     }
 
 }
 
-
-
-#affwp-affiliate-dashboard .account-content,
-.account-nav {
+.container-fluid .account-content,
+.container-fluid .account-nav {
 	padding-right: 0;
-}
-
-#affwp-affiliate-dashboard .account-nav,
-.account-content {
 	padding-left: 0;
 }
 
@@ -72,17 +70,19 @@
 
 	// tab content for account and affiliate area page
 	.account-content > div {
-	    border: 2px solid @light-grey;
+	    border: 2px solid @border-light-grey-alt;
 	    border-left: none;
-		min-height: 100%;
+		min-height: 50rem;
+		padding: 2rem;
 	}
 
 	.account-nav {
 		margin-bottom: 0;
 	}
 
-	.account-content > div {
-		padding: 4rem;
+	.affwp-affiliate-dashboard-tab.active a,
+	.ui-tabs-active a {
+		box-shadow: 5px 0 0 @account-tab-active-color inset;
 	}
 
 	.account-nav ul a {
@@ -91,16 +91,14 @@
 		margin: 0;
 	}
 
-	.account-nav ul {
-		.affwp-affiliate-dashboard-tab.active a,
-	    .ui-tabs-active a {
-			box-shadow: 4px 0 0 0px @secondary-color inset;
-	    }
+	.account-nav ul:last-child {
+		border-bottom: 2px solid @border-light-grey-alt;
 	}
 	.account-nav ul li {
-		background: #fdfdfd;
-		border: 1px solid @light-grey;
+		background: @light-grey-alt;
+		border: 2px solid @border-light-grey-alt;
 		border-right: none;
+		border-bottom: none;
 	}
 
 	.account-nav ul li {
@@ -115,16 +113,16 @@
 		position: absolute;
 		right: 0;
 		bottom: 100%;
-		width: 4px;
-		height: 1200px;
-		background: @light-grey;
+		width: 2px;
+		height: 1000px;
+		background: @border-light-grey-alt;
 	}
 
 	.affwp-affiliate-dashboard-tab.active:after,
 	.ui-tabs-active:after {
 		top: 100%;
 		bottom: auto;
-		height: 4000px;
+		height: 40000px;
 		z-index: 1;
 	}
 
