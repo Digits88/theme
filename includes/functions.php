@@ -57,19 +57,9 @@ function affwp_theme_screenshot_count() {
 }
 
 /**
- * Determine if the purchase was part of the Black Friday/Cyber Monday sale
- * Returns true if the discount was used
+ * Determine if the purchase was part of a sale
  */
-function affwp_theme_was_sale() {
-
-	// has discount expired?
-	$is_discount_expired = edd_is_discount_expired( edd_get_discount_id_by_code( 'BFCM2016' ) );
-
-	// is active?
-	$is_discount_active = edd_is_discount_active( edd_get_discount_id_by_code( 'BFCM2016' ) );
-
-	// is discounted started?
-	$is_discount_started = edd_is_discount_started( edd_get_discount_id_by_code( 'BFCM2016' ) );
+function affwp_theme_was_sale_purchase() {
 
 	$purchase_session = edd_get_purchase_session();
 
@@ -95,8 +85,17 @@ function affwp_theme_was_sale() {
 		$discounts = $payment->discounts;
 
 		// purchase must contain discount, discount must be started, active, and not expired
-		if ( 'BFCM2016' === $discounts && $is_discount_started && $is_discount_active && ! $is_discount_expired ) {
-			return true;
+
+		$discount_id = edd_get_discount_id_by_code( $discounts );
+
+		if (
+			function_exists( 'affwpcf_discount_ids' ) &&
+			in_array( $discount_id, affwpcf_discount_ids() ) && // make sure discount exists in the discount array
+			edd_is_discount_started( $discount_id ) &&          // make sure discount has started
+			edd_is_discount_active( $discount_id ) &&           // make sure discount is active
+			! edd_is_discount_expired( $discount_id )           // make sure discount has not expired
+		) {
+			return $discounts;
 		}
 
 	}

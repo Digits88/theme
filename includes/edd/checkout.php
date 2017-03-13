@@ -157,79 +157,67 @@ function affwp_theme_edd_success_page_the_content( $content ) {
 add_filter( 'the_content', 'affwp_theme_edd_success_page_the_content' );
 
 /**
- * Share purchase via Twitter
+ * Success page modifications
  */
-function affwp_theme_edd_share_purchase() {
-
-/**
- * Ask the customer to share via Twitter if the purchase included a sale discount and the sale is still going (discount not expired, is active etc)
- */
-if ( affwp_theme_was_sale() ) :
-
+function affwp_theme_edd_success_page_content() {
 	$purchase_session = edd_get_purchase_session();
-	$tweet            = 'I just saved 30%25 on AffiliateWP (@affwp), an affiliate marketing plugin for WordPress! %23BlackFriday %23CyberMonday';
-	$url              = 'https://afffiliatewp.com';
 
-?>
+	if ( $purchase_session ) : ?>
+	<p class="mb-xs-4">Your purchase means a lot to us! In just a few moments you'll receive an email containing a download link for AffiliateWP. You can also download AffiliateWP from <a href="/account/">your account</a> or at the bottom of this page.</p>
+	<?php endif;
 
-<section class="signup box mb-xs-4" id="sign-up">
+	/**
+	 * Ask the customer to share via Twitter if the purchase included a sale discount and the sale is still going (discount not expired, is active etc)
+	 * Customer must use a valid sale discount for this to appear
+	 */
+	if ( affwp_theme_was_sale_purchase() ) :
 
-	<h4 class="signup-header">You just saved a huge 30% on AffiliateWP during our Black Friday/Cyber Monday sale</h4>
-	<p class="signup-intro">Tell your friends on Twitter or they will miss out!</p>
+		// Get discount.
+		$discount = edd_get_discount( edd_get_discount_id_by_code( affwp_theme_was_sale_purchase() ) );
 
-	<div class="aligncenter">
-		<a class="button large twitter" href="https://twitter.com/intent/tweet/?text=<?php echo $tweet; ?>&amp;url=<?php echo $url; ?>" target="_blank">
-			<svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-				<g>
-					<path d="M23.444,4.834c-0.814,0.363-1.5,0.375-2.228,0.016c0.938-0.562,0.981-0.957,1.32-2.019c-0.878,0.521-1.851,0.9-2.886,1.104 C18.823,3.053,17.642,2.5,16.335,2.5c-2.51,0-4.544,2.036-4.544,4.544c0,0.356,0.04,0.703,0.117,1.036 C8.132,7.891,4.783,6.082,2.542,3.332C2.151,4.003,1.927,4.784,1.927,5.617c0,1.577,0.803,2.967,2.021,3.782 C3.203,9.375,2.503,9.171,1.891,8.831C1.89,8.85,1.89,8.868,1.89,8.888c0,2.202,1.566,4.038,3.646,4.456 c-0.666,0.181-1.368,0.209-2.053,0.079c0.579,1.804,2.257,3.118,4.245,3.155C5.783,18.102,3.372,18.737,1,18.459 C3.012,19.748,5.399,20.5,7.966,20.5c8.358,0,12.928-6.924,12.928-12.929c0-0.198-0.003-0.393-0.012-0.588 C21.769,6.343,22.835,5.746,23.444,4.834z"/>
-				</g>
-			</svg>
+		// Get the discount amount.
+		$discount_title  = $discount->name;
+		$discount_amount = $discount->amount;
 
-			<span>Tell your friends on Twitter!</span>
 
-		</a>
-	</div>
+		$tweet            = 'I just saved ' . $discount_amount . '%25 on AffiliateWP (@affwp), an affiliate marketing plugin for WordPress! Check it out:';
+		$url              = 'https://afffiliatewp.com';
 
-</section>
+	?>
 
-<section class="more-deals">
-	<h3 class="signup-header">More amazing deals!</h3>
-	<p>We're also having a 30% off sale on our sister products:</p>
+	<section class="signup box mb-xs-4">
 
-	<a href="https://easydigitaldownloads.com/?ref=4657" target="_blank">
-		<img class="mb-xs-1" src="<?php echo get_stylesheet_directory_uri() . '/images/sale-easy-digital-downloads.png'; ?>" />
-	</a>
+		<div class="mb-xs-2">
+			<h3 class="signup-header aligncenter">You just saved <?php echo $discount_amount; ?>% on AffiliateWP during our <?php echo $discount_title; ?>!</h3>
+		</div>
 
-	<p>Easy Digital Downloads is the easiest way to sell digital products with WordPress. <br /><a href="https://easydigitaldownloads.com/?ref=4657" target="_blank">View sale &rarr;</a></p>
+		<div class="aligncenter">
+			<a class="button large twitter" href="https://twitter.com/intent/tweet/?text=<?php echo $tweet; ?>&amp;url=<?php echo $url; ?>" target="_blank">
+				<svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+					<g>
+						<path d="M23.444,4.834c-0.814,0.363-1.5,0.375-2.228,0.016c0.938-0.562,0.981-0.957,1.32-2.019c-0.878,0.521-1.851,0.9-2.886,1.104 C18.823,3.053,17.642,2.5,16.335,2.5c-2.51,0-4.544,2.036-4.544,4.544c0,0.356,0.04,0.703,0.117,1.036 C8.132,7.891,4.783,6.082,2.542,3.332C2.151,4.003,1.927,4.784,1.927,5.617c0,1.577,0.803,2.967,2.021,3.782 C3.203,9.375,2.503,9.171,1.891,8.831C1.89,8.85,1.89,8.868,1.89,8.888c0,2.202,1.566,4.038,3.646,4.456 c-0.666,0.181-1.368,0.209-2.053,0.079c0.579,1.804,2.257,3.118,4.245,3.155C5.783,18.102,3.372,18.737,1,18.459 C3.012,19.748,5.399,20.5,7.966,20.5c8.358,0,12.928-6.924,12.928-12.929c0-0.198-0.003-0.393-0.012-0.588 C21.769,6.343,22.835,5.746,23.444,4.834z"/>
+					</g>
+				</svg>
 
-	<a href="https://restrictcontentpro.com/?ref=4570" target="_blank">
-		<img class="mb-xs-1" src="<?php echo get_stylesheet_directory_uri() . '/images/sale-restrict-content-pro.png'; ?>" />
-	</a>
+				<span>Tell your friends on Twitter!</span>
 
-	<p>Restrict Content Pro is a full-featured, powerful membership solution for WordPress.<br /><a href="https://restrictcontentpro.com/?ref=4570" target="_blank">View sale &rarr;</a></p>
+			</a>
+		</div>
 
-</section>
+	</section>
 
+	<section class="more-deals">
+		<h3 class="signup-header">More amazing deals!</h3>
+		<p>We're also having a sale on our sister products, <a href="https://easydigitaldownloads.com/?ref=4657" target="_blank">Easy Digital Downloads</a> and <a href="https://restrictcontentpro.com/?ref=4570" target="_blank">Restrict Content Pro</a>. Check them out!</p>
+	</section>
+
+	<?php endif;
+
+	if ( $purchase_session ) : ?>
+
+	<h3>Payment Details</h3>
 <?php endif; ?>
-
-<h3>Payment Details</h3>
 
 <?php
 }
-//add_action( 'affwp_theme_edd_success_page_the_content', 'affwp_theme_edd_share_purchase' );
-
-/**
- * Add a subtitle to the purchase confirmation page
- *
- * @since 1.0.0
- */
-function affwp_theme_purchase_subtitle( $defaults ) {
-
-	if ( function_exists( 'edd_is_success_page' ) && edd_is_success_page() ) {
-		$defaults['subtitle'] = sprintf( __( 'Your purchase means a lot to us. In just a few moments you\'ll receive an email containing a download link for AffiliateWP. You can also download AffiliateWP from <a href="%s">your account</a> or at the bottom of this page.', 'themedd' ), site_url( '/account/' ) );
-	}
-
-	return $defaults;
-
-}
-add_filter( 'themedd_header_defaults', 'affwp_theme_purchase_subtitle' );
+add_action( 'affwp_theme_edd_success_page_the_content', 'affwp_theme_edd_success_page_content' );

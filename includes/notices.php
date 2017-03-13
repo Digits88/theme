@@ -18,7 +18,12 @@ function affwp_theme_display_notice() {
 		return;
 	}
 
-	/// this displays the notification area if the user has not read it before
+	// Don't show notice if on checkout or purchase confirmation page.
+	if ( edd_is_checkout() || edd_is_success_page() ) {
+		return;
+	}
+
+	// this displays the notification area if the user has not read it before
 	global $user_ID;
 
 	$notice_args = array(
