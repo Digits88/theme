@@ -181,7 +181,7 @@ function affwp_theme_edd_success_page_content() {
 
 
 		$tweet            = 'I just saved ' . $discount_amount . '%25 on AffiliateWP (@affwp), an affiliate marketing plugin for WordPress! Check it out:';
-		$url              = 'https://afffiliatewp.com';
+		$url              = 'https://affiliatewp.com';
 
 	?>
 
