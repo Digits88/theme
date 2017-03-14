@@ -108,7 +108,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 
 			<div class="faq">
 				<h4>Can I cancel my subscription?</h4>
-				<p>Yes, your subscription can be cancelled at anytime from your account page. You will retain access to support and updates until your license key expires, one year from the purchase date.</p>
+				<p>Yes, your subscription for a Personal, Plus or Professional license can be cancelled at anytime from your account page. You will retain access to support and updates until your license key expires, one year from the purchase date.</p>
 			</div>
 
 			<div class="faq">
@@ -118,7 +118,8 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 
 			<div class="faq">
 				<h4>I don't want a subscription</h4>
-				<p>Your subscription can be cancelled at anytime after purchase. Once cancelled, your license key will not renew automatically and will expire on the expiration date. Once expired, you will no longer receive automatic updates or have access to support. You may manually renew your license at any time to reactivate your subscription.</p>
+
+				<p>The Ultimate license is a one-time payment with no subscription. Personal, Plus and Professional license subscriptions can be cancelled at anytime after purchase. Once cancelled, your license key will not renew automatically and will expire on the expiration date. Once expired, you will no longer receive automatic updates or have access to support. You may manually renew your license at any time to reactivate your subscription.</p>
 			</div>
 
 			<div class="faq">
