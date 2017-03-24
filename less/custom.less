@@ -99,11 +99,18 @@ textarea {
 	border-radius: @border-radius;
 }
 
-// anchor links displayed inside notices, eg support form
-.notice a {
-	color: #fff;
-	text-decoration: underline;
+.notice {
+	background: @notice-background-color;
+	color: @notice-text-color;
+	padding: 1rem;
+
+	// anchor links displayed inside notices, eg support form
+	a {
+		color: #fff;
+		text-decoration: underline;
+	}
 }
+
 
 #content {
 	padding-bottom: 4rem;
