@@ -1,13 +1,12 @@
 .site-footer {
     position: relative;
     width: 100%;
-    padding-top: 4rem;
+	padding-top: 2rem;
 
     a {
         font-size: 0.875rem;
         border-bottom: none;
         color: @body-text-color;
-        display: block;
         padding: 0.25rem 0;
 
         &:hover {
@@ -16,12 +15,16 @@
         }
     }
 
-    .footer-links h4 {
+    h4 {
         border-bottom: 2px solid @light-grey;
         padding-bottom: 1rem;
         font-size: 1rem;
+		margin-bottom: 1rem;
     }
 
+	.wrapper {
+		max-width: 1316px;
+	}
 }
 
 .meet-the-family {
@@ -52,6 +55,10 @@
 
 @media only screen and ( min-width: 720px ) {
 
+	.site-footer {
+	    padding-top: 4rem;
+	}
+
 	#mascot {
 		width: 200px;
 		height: 132px;
@@ -63,7 +70,6 @@
 		margin-left: -100px;
 
 	}
-
 
 	.site-footer:hover #mascot { background-position: 0 -132px; }
 

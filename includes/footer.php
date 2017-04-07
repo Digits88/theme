@@ -12,97 +12,60 @@ function affwp_theme_remove_footer( $return ) {
 	return $return;
 }
 
-add_filter( 'affwp_theme_show_footer', 'affwp_theme_remove_footer' );
+add_filter( 'themedd_footer_widgets_show', 'affwp_theme_remove_footer' );
+
+
+function affwp_theme_add_footer_column() {
+	?>
+
+	<div class="widget-column meet-the-family">
+
+		<h4>Meet the family</h4>
+		<ul>
+
+			<li>
+				<a href="https://easydigitaldownloads.com/" target="_blank">
+					<img src="<?php echo get_stylesheet_directory_uri() . '/images/meet-easy-digital-downloads.png'; ?>" alt="" />
+					<span>Easy Digital Downloads</span>
+				</a>
+
+			</li>
+
+			<li>
+				<a href="https://restrictcontentpro.com/?ref=4570" target="_blank">
+					<img src="<?php echo get_stylesheet_directory_uri() . '/images/meet-restrict-content-pro.png'; ?>" alt="" />
+					<span>Restrict Content Pro</span>
+				</a>
+			</li>
+		</ul>
+
+	</div>
+	<?php
+}
+add_action( 'themedd_footer_widgets_end', 'affwp_theme_add_footer_column' );
 
 /**
- * Footer links
- *
- * @since 1.0.0
- * @todo add links to menu rather than hardcoding them
+ * Allows customization of the widget arguments
  */
-function affwp_theme_footer_menu() {
+function affwp_theme_footer_widget_tags( $widget_tags ) {
+
+	$widget_tags['before_title'] = '<h4 class="widget-title">';
+	$widget_tags['after_title']  = '</h4>';
+
+	return $widget_tags;
+
+}
+add_filter( 'themedd_footer_1_widget_tags', 'affwp_theme_footer_widget_tags' );
+add_filter( 'themedd_footer_2_widget_tags', 'affwp_theme_footer_widget_tags' );
+add_filter( 'themedd_footer_3_widget_tags', 'affwp_theme_footer_widget_tags' );
+
+/**
+ * Mascot
+ */
+function affwp_theme_footer_mascot() {
 
 	if ( ! ( is_page( 'about' ) || is_404() || ( function_exists( 'edd_is_failed_transaction_page' ) && edd_is_failed_transaction_page() ) ) ) : ?>
 	<div id="mascot"></div>
-	<?php endif; ?>
-
-	<?php if ( apply_filters( 'affwp_theme_show_footer', true ) ) : ?>
-	<section class="container-fluid footer-links">
-		<div class="wrapper">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12">
-					<div class="row">
-						<div class="col-xs-12 col-sm-3">
-
-							<h4>Product</h4>
-							<ul>
-								<li><a href="<?php echo site_url( '/pricing/' ); ?>">Pricing</a></li>
-								<li><a href="<?php echo site_url( '/features/' ); ?>">Features</a></li>
-								<li><a href="<?php echo site_url( '/screenshots/' ); ?>">Screenshots</a></li>
-								<li><a href="<?php echo site_url( '/add-ons/' ); ?>">Add-ons</a></li>
-								<li><a href="<?php echo site_url( '/testimonials/' ); ?>">Testimonials</a></li>
-								<li><a href="<?php echo site_url( '/changelog/' ); ?>">Changelog</a></li>
-								<li><a href="<?php echo site_url( '/affiliates/' ); ?>">Become an affiliate</a></li>
-							</ul>
-
-						</div>
-
-						<div class="col-xs-12 col-sm-3">
-
-							<h4>Company</h4>
-							<ul>
-								<li><a href="<?php echo site_url( '/about/' ); ?>">About</a></li>
-								<li><a href="<?php echo site_url( '/blog/' ); ?>">Blog</a></li>
-								<li><a href="<?php echo site_url( '/brand-assets/' ); ?>">Brand assets</a></li>
-								<li><a href="<?php echo site_url( '/refund-policy/' ); ?>">Refund policy</a></li>
-								<li><a href="https://twitter.com/affwp" target="_blank">Follow us on Twitter</a></li>
-							</ul>
-
-						</div>
-
-						<div class="col-xs-12 col-sm-3">
-
-							<h4>Get help</h4>
-							<ul>
-								<li><a href="<?php echo site_url( '/support/' ); ?>">Get support</a></li>
-								<li><a href="http://docs.affiliatewp.com/" target="_blank">Documentation</a></li>
-								<li><a href="<?php echo site_url( '/consultants/' ); ?>">Hire a consultant</a></li>
-							</ul>
-
-						</div>
-
-						<div class="col-xs-12 col-sm-3 meet-the-family">
-
-							<h4>Meet the family</h4>
-							<ul>
-
-								<li>
-									<a href="https://easydigitaldownloads.com/" target="_blank">
-										<img src="<?php echo get_stylesheet_directory_uri() . '/images/meet-easy-digital-downloads.png'; ?>" alt="" />
-										<span>Easy Digital Downloads</span>
-									</a>
-
-								</li>
-
-								<li>
-									<a href="https://restrictcontentpro.com/?ref=4570" target="_blank">
-										<img src="<?php echo get_stylesheet_directory_uri() . '/images/meet-restrict-content-pro.png'; ?>" alt="" />
-										<span>Restrict Content Pro</span>
-									</a>
-								</li>
-							</ul>
-
-						</div>
-
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</section>
-	<?php endif; ?>
-
-<?php
+	<?php endif;
 }
-add_action( 'themedd_footer_start', 'affwp_theme_footer_menu' );
+add_action( 'themedd_footer_widgets_before', 'affwp_theme_footer_mascot' );

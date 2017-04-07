@@ -100,85 +100,84 @@ g.icon rect {
 
 @media only screen and ( min-width: @screen-lg-min ) {
 
-    // show icons
-    li.menu-item div  {
-        display: block;
-    }
-
-    .main-navigation .menu-item-has-children > a:after {
-        margin-top: 8px;
-    }
-
-    li.menu-item a {
-        display: block;
-        padding-top: 3rem;
-    }
-
-    li.menu-item div {
-        text-align: center;
-        position: relative;
-    }
-
-    // li.menu-item svg {
-    //     width: 2rem;
-    // }
+	.main-navigation .menu-item-has-children > a:after {
+		margin-top: 8px;
+	}
 
 
-    // svg animation
-//    li.menu-item:not(:last-child) svg {
-    li.menu-item div svg {
-        position: absolute;
-        bottom: 1rem;
-        display: block;
-        left: 50%;
-        -webkit-transition: all 0.25s ease-in-out;
-        -moz-transition: all 0.25s ease-in-out;
-        -o-transition: all 0.25s ease-in-out;
-        transition: all 0.25s ease-in-out;
-        width: 2rem;
-        opacity: 0;
-        margin-left: -1rem;
-    }
+
+	.primary-menu {
+
+		// show icons
+	    li.menu-item div  {
+	        display: block;
+	    }
+
+		> li.menu-item > a {
+			display: block;
+			padding-top: 3rem;
+		}
 
 
-    // purchase/checkout menu item
-    li.menu-item.nav-action {
-        margin-left: 1rem;
-    }
 
-    li.menu-item.nav-action a {
-        padding-top: 3rem;
-    }
+	    li.menu-item div {
+	        text-align: center;
+	        position: relative;
+	    }
 
-    li.menu-item.nav-action svg {
-        opacity: 1;
-
-    }
-    // hover effect for icons
-    li.menu-item:hover div svg {
-        bottom: 0.5rem;
-        opacity: 1;
-    }
-
-    li.menu-item.checkout div svg {
-        bottom: 0.5rem;
-    }
+		li.menu-item div svg {
+	        position: absolute;
+	        bottom: 1rem;
+	        display: block;
+	        left: 50%;
+	        -webkit-transition: all 0.25s ease-in-out;
+	        -moz-transition: all 0.25s ease-in-out;
+	        -o-transition: all 0.25s ease-in-out;
+	        transition: all 0.25s ease-in-out;
+	        width: 2rem;
+	        opacity: 0;
+	        margin-left: -1rem;
+	    }
 
 
-    li.menu-item.current-menu-ancestor svg,
-    li.menu-item.current-menu-item svg {
-        bottom: 0.5rem;
-        opacity: 1;
-    }
+	    // purchase/checkout menu item
+	    li.menu-item.nav-action {
+	        margin-left: 1rem;
+	    }
+
+	    li.menu-item.nav-action a {
+	        padding-top: 3rem;
+	    }
+
+	    li.menu-item.nav-action svg {
+	        opacity: 1;
+
+	    }
+	    // hover effect for icons
+	    li.menu-item:hover div svg {
+	        bottom: 0.5rem;
+	        opacity: 1;
+	    }
+
+	    li.menu-item.checkout div svg {
+	        bottom: 0.5rem;
+	    }
+
+
+	    li.menu-item.current-menu-ancestor svg,
+	    li.menu-item.current-menu-item svg {
+	        bottom: 0.5rem;
+	        opacity: 1;
+	    }
+
+	}
 
 }
 
 @media only screen and ( min-width: @screen-sm-min ) {
 
-
 	li.menu-item.nav-action a {
 		background: @accent-color;
 	}
-
 
 }
