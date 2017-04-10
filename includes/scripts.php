@@ -217,3 +217,24 @@ function affwp_themedd_call_to_action_js() {
 	<?php
 }
 add_action( 'wp_footer', 'affwp_themedd_call_to_action_js', 100 );
+
+/*
+ * Ouput Perfect Audience conversion tracking script
+ */
+function affwp_perfect_audience_tracking() {
+?>
+<script type="text/javascript">
+  (function() {
+    window._pa = window._pa || {};
+    <?php if( $session = edd_get_purchase_session() ) : $payment_id = edd_get_purchase_id_by_key( $session['purchase_key'] ); ?>
+    _pa.orderId = "<?php echo $payment_id; ?>";
+    _pa.revenue = "<?php echo edd_get_payment_amount( $payment_id ); ?>";
+    <?php endif; ?>
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.marinsm.com/serve/58eb8897abc4683ab500005d.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+<?php
+}
+add_action( 'wp_footer', 'affwp_perfect_audience_tracking' );
