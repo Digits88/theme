@@ -100,12 +100,17 @@ add_action( 'themedd_site_before', 'affwp_theme_display_notice' );
  */
 function affwp_theme_discount_success() {
 
+	if ( edd_is_checkout() ) {
+		return;
+	}
+
 	$discount = isset( $_GET['discount'] ) && $_GET['discount'] ? $_GET['discount'] : '';
 
 	$link  = false;
 	$class = '';
 
 	// remove link and change message on account page because they will be upgrading etc
+
 	if ( is_page( 'account' ) ) {
 		$text  = 'Woohoo! Your discount was successfully added to checkout.';
 	} else {
