@@ -195,6 +195,28 @@ get_header(); ?>
 				</div>
 			</div>
 
+			<div class="grid-item col-xs-12 col-sm-6 col-md-4 mb-xs-2 mb-sm-0">
+				<div class="grid-item-inner">
+
+					<div class="grid-item-image">
+						<img class="profile" alt="Ginger Coolidge" src="<?php echo get_stylesheet_directory_uri() . '/images/about/ginger-coolidge.jpg'; ?>">
+					</div>
+
+					<div class="about-details">
+						<h3 class="grid-item-title">Ginger Coolidge</h3>
+						<a href="https://gingercoolidge.com" target="_blank">gingercoolidge.com</a><br/>
+						<a href="https://twitter.com/gscoolidge" class="twitter-follow-button" data-show-count="false">Follow @gscoolidge</a>
+					</div>
+
+					<div class="grid-item-content">
+						<p>After working from a cubicle slinging T-SQL and .NET for over a decade, and a short stint with iOS app support, Ginger broke into the WordPress world in late 2013 while looking for help on a real estate website. Before development her background included telephone support at a C:\ prompt, email support and QA. Ginger became part of the AffiliateWP team in early 2017, tackling support tickets, testing code changes and of course participating in various Slack shenanigans</p>
+
+		                <p>Ginger called Texas her home for many decades and speaks fluent Texan still to this day. (Y'all is a word) However, after many visits the call of the Pacific and West Coast vibe was too strong to ignore, and she now hails from the state park otherwise known as Portland, Oregon. Screen breaks for Ginger include walking their Chow/Akita mix Zivah as often as possible, drinking fabulous mocha coffee creations and exploring foodie and oceanic hiking adventures with her husband Jeff.</p>
+					</div>
+
+				</div>
+			</div>
+
 
 		</div>
 
