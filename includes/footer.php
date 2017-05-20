@@ -5,7 +5,7 @@
  */
 function affwp_theme_remove_footer( $return ) {
 
-	if ( edd_is_checkout() ) {
+	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() ) {
 		$return = false;
 	}
 
