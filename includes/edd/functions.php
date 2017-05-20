@@ -447,16 +447,17 @@ function affwp_theme_can_become_affiliate() {
 
 			$downloads = $payment['downloads'];
 
-			foreach ( $downloads as $download ) {
+			if ( $downloads ) {
+				foreach ( $downloads as $download ) {
 
-				if ( $download['id'] === affwp_theme_get_download_id() ) {
+					if ( $download['id'] === affwp_theme_get_download_id() ) {
 
-					// AffiliateWP was purchased, get the data and exit out of loop
-					$purchase_date = get_post_meta( $purchase->ID, '_edd_completed_date', true );
-					break 2;
+						// AffiliateWP was purchased, get the data and exit out of loop
+						$purchase_date = get_post_meta( $purchase->ID, '_edd_completed_date', true );
+						break 2;
+					}
 				}
 			}
-
 		}
 	}
 
