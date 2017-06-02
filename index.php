@@ -100,7 +100,7 @@ if ( $query->have_posts() ) : ?>
 
 					<?php
 						if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
-							themedd_entry_date();
+							themedd_posted_on( false );
 						}
 					?>
 
