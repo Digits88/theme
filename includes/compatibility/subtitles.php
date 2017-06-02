@@ -18,7 +18,7 @@ if ( class_exists( 'Subtitles' ) && method_exists( 'Subtitles', 'subtitle_stylin
 function affwp_theme_post_header_custom( ) {
    add_filter( 'subtitle_view_supported', '__return_true' );
 }
-add_action( 'themedd_post_header_before', 'affwp_theme_post_header_custom' );
+add_action( 'themedd_page_header_before', 'affwp_theme_post_header_custom' );
 
 /**
  * Remove support for subtitles after the header has been rendered
@@ -29,7 +29,7 @@ add_action( 'themedd_post_header_before', 'affwp_theme_post_header_custom' );
 function affwp_theme_post_header_remove_custom( ) {
 	add_filter( 'subtitle_view_supported', '__return_false' );
 }
-add_action( 'themedd_post_header_end', 'affwp_theme_post_header_remove_custom' );
+add_action( 'themedd_page_header_end', 'affwp_theme_post_header_remove_custom' );
 
 /**
  * Filter subtitle markup

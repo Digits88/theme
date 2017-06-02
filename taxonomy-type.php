@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => single_cat_title( '', false ), 'subtitle' => term_description() ) ); ?>
+<?php themedd_page_header( array( 'title' => single_cat_title( '', false ), 'subtitle' => term_description() ) ); ?>
 
 <?php if ( have_posts() ) : ?>
 

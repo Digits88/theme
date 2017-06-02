@@ -22,7 +22,7 @@ function affwp_theme_remove_post_header( $ret ) {
 	return $ret;
 
 }
-add_filter( 'themedd_post_header', 'affwp_theme_remove_post_header' );
+add_filter( 'themedd_page_header', 'affwp_theme_remove_post_header' );
 
 
 /**
@@ -50,7 +50,7 @@ function affwp_theme_blog_header() {
 		<header class="page-header col-xs-12 blog-featured pv-xs-2 pv-sm-4">
 			<div class="wrapper">
 
-				<?php do_action( 'themedd_post_header_start' ); ?>
+				<?php do_action( 'themedd_page_header_start' ); ?>
 
 				<h1 class="<?php echo get_post_type(); ?>-title">
 					<?php echo get_the_title(); ?>
@@ -60,7 +60,7 @@ function affwp_theme_blog_header() {
 				/**
 				 * SVG animation will load on this hook if present
 				 */
-				do_action( 'themedd_post_header_end', get_the_ID() );
+				do_action( 'themedd_page_header_end', get_the_ID() );
 				?>
 
 				<?php
@@ -281,7 +281,7 @@ function affwp_theme_post_header_meta() {
 
 	<?php
 }
-add_action( 'themedd_post_header_end', 'affwp_theme_post_header_meta' );
+add_action( 'themedd_page_header_end', 'affwp_theme_post_header_meta' );
 
 /**
  * Change the labels for the paging navigation

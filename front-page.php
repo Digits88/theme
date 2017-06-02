@@ -21,7 +21,7 @@ if ( $query->have_posts() ) : ?>
 <section class="container-fluid news section-grey">
     <div class="wrapper">
 		<div class="row pv-xs-2">
-			<div class="col-xs-12 aligncenter">
+			<div class="col-xs-12 center-xs">
 				<h3 class="label mb-xs-1 mb-sm-0">New</h3>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<p><?php the_title(); ?> <a href="<?php the_permalink(); ?>">Read the post &rarr;</a></p>
@@ -41,13 +41,13 @@ if ( $query->have_posts() ) : ?>
 <section class="container-fluid pv-xs-2 pv-lg-4 rationale">
     <div class="wrapper">
 
-		<h1 class="page-title aligncenter mb-xs-4">
+		<h1 class="page-title center-xs mb-xs-4">
 			<span class="entry-title-primary">Affiliate marketing will grow your business</span>
 			<span class="subtitle">Rank higher. Boost traffic. Earn more money.</span>
 		</h1>
 
 
-        <div class="row center-xs mb-xs-4 aligncenter">
+        <div class="row center-xs mb-xs-4">
             <div class="col-xs-12 col-sm-4">
 
                 <img class="mb-xs-1" width="96" height="96" src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/higher-visibility-2.svg'; ?>" />
@@ -75,7 +75,7 @@ if ( $query->have_posts() ) : ?>
 
         </div>
 
-        <div class="row aligncenter center-xs">
+        <div class="row center-xs">
             <div class="col-xs-12 col-sm-10">
                 <a href="#how-it-works" class="popup-content" id="" data-effect="mfp-move-from-bottom">Learn how affiliate marketing works</a>
 
@@ -101,12 +101,12 @@ if ( $query->have_posts() ) : ?>
         ?>
         <div>
 
-			<h1 class="page-title aligncenter">
+			<h1 class="page-title center-xs">
 				<span class="entry-title-primary">Elegant affiliate tracking for WordPress</span>
 				<span class="subtitle">Finally, an affiliate marketing solution that feels like WordPress. AffiliateWP provides advanced affiliate and referral tracking, integrated seamlessly with your WordPress site.</span>
 			</h1>
 
-            <div class="image aligncenter">
+            <div class="image center-xs">
                 <div class="drag-me center-xs middle-xs">Drag</div>
                 <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-referrals.png'; ?>" alt="Elegant affiliate tracking for WordPress" />
             </div>
@@ -120,12 +120,12 @@ if ( $query->have_posts() ) : ?>
         ?>
         <div>
 
-			<h1 class="page-title aligncenter">
+			<h1 class="page-title center-xs">
 				<span class="entry-title-primary">Easily manage your team of affiliates</span>
 				<span class="subtitle">Effortless affiliate management. View top-earning affiliates, edit affiliate accounts, set per-affiliate referral rates and more.</span>
 			</h1>
 
-            <div class="image aligncenter">
+            <div class="image center-xs">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-affiliates.png'; ?>" alt="Easily manage your team of affiliates" />
             </div>
         </div>
@@ -137,12 +137,12 @@ if ( $query->have_posts() ) : ?>
         ?>
         <div>
 
-			<h1 class="page-title aligncenter">
+			<h1 class="page-title center-xs">
 				<span class="entry-title-primary">Set up your new affiliate system in just minutes</span>
 				<span class="subtitle">Get up and running in minutes. AffiliateWP integrates with your favorite WordPress eCommerce, form and membership plugins with one click.</span>
 			</h1>
 
-            <div class="image aligncenter">
+            <div class="image center-xs">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-integrations.png'; ?>" alt="Set up your new affiliate system in just minutes" />
             </div>
         </div>
@@ -154,12 +154,12 @@ if ( $query->have_posts() ) : ?>
         ?>
         <div>
 
-			<h1 class="page-title aligncenter">
+			<h1 class="page-title center-xs">
 				<span class="entry-title-primary">A place for your affiliates to call home</span>
 				<span class="subtitle">An affiliate dashboard that blends seamlessly with your WordPress theme. Affiliates can view earnings, see their performance statistics, and access creatives.</span>
 			</h1>
 
-            <div class="image aligncenter">
+            <div class="image center-xs">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-affiliate-area.png'; ?>" alt="A place for your affiliates to call home" />
             </div>
         </div>
@@ -171,12 +171,12 @@ if ( $query->have_posts() ) : ?>
         ?>
         <div>
 
-			<h1 class="page-title aligncenter">
+			<h1 class="page-title center-xs">
 				<span class="entry-title-primary">View real-time reports and graphs</span>
 				<span class="subtitle">Get an overview of your affiliates’ performance in real-time with detailed referral data and graphs.</span>
 			</h1>
 
-            <div class="image aligncenter">
+            <div class="image center-xs">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/images/screenshots/affiliatewp-referrals.png'; ?>" alt="View real-time reports and graphs" />
             </div>
         </div>
@@ -240,11 +240,10 @@ if ( $query->have_posts() ) : ?>
 	);
 
 	$gallery = get_children( $args );
-
 ?>
 
 <?php if ( $gallery ) : ?>
-<section class="container-fluid pv-xs-2 pv-lg-4 screenshots aligncenter">
+<section class="container-fluid pv-xs-2 pv-lg-4 screenshots center-xs">
 	<div class="wrapper">
 		<a href="<?php echo site_url( 'screenshots'); ?>" class="button large outline secondary">See all <?php echo affwp_theme_screenshot_count(); ?> screenshots</a>
     </div>
@@ -259,7 +258,7 @@ if ( $query->have_posts() ) : ?>
 <section class="container-fluid pv-xs-2 pv-lg-4 features">
 	<div class="wrapper">
 
-		<div class="row mb-xs-2 center-xs aligncenter">
+		<div class="row mb-xs-2 center-xs">
 			<div class="col-xs">
 				<h1 class="page-title">
 					<span class="entry-title-primary">Packed full of features</span>
@@ -301,7 +300,7 @@ if ( $integrations->have_posts() ) : ?>
     <div class="wrapper wide">
 
 		<div class="row">
-            <div class="col-xs center-xs aligncenter mb-xs-2 mb-sm-4">
+            <div class="col-xs center-xs mb-xs-2 mb-sm-4">
 				<h1 class="page-title">
 					<span class="entry-title-primary">Beautifully integrated with your favorite WordPress plugins</span>
 					<span class="subtitle">AffiliateWP integrates seamlessly with <?php echo $integrations->found_posts; ?> popular eCommerce, membership, form, and invoice WordPress plugins.</span>
@@ -361,7 +360,7 @@ if ( $integrations->have_posts() ) : ?>
         </div>
 		<?php endif; ?>
 
-        <div class="aligncenter" id="show-integrations">
+        <div class="center-xs" id="show-integrations">
             <a href="#" class="button outline white large">See all <?php echo $integrations->found_posts; ?> supported integrations</a>
         </div>
 
@@ -382,7 +381,7 @@ if ( $integrations->have_posts() ) : ?>
     });
 </script>
 
-<section class="container-fluid highlight used-by middle-xs center-xs aligncenter">
+<section class="container-fluid highlight used-by middle-xs center-xs">
     <div class="wrapper full-width">
         <h4>Some of the awesome companies that use AffiliateWP</h4>
 
@@ -440,7 +439,7 @@ if ( $integrations->have_posts() ) : ?>
 
 	<div class="wrapper wide">
 
-        <h1 class="page-title aligncenter mb-xs-4 mb-sm-8">
+        <h1 class="page-title center-xs mb-xs-4 mb-sm-8">
             <span class="entry-title-primary">Start making more money, risk-free</span>
             <span class="subtitle">Purchase in confidence with our 30 Day Money Back Guarantee <?php echo affwp_show_refund_policy_link(); ?></span>
         </h1>
@@ -459,10 +458,10 @@ if ( $integrations->have_posts() ) : ?>
 ?>
 <?php if ( affwp_theme_get_tweets() ) : ?>
 <section class="tweets container-fluid highlight pv-xs-2 pv-lg-8">
-    <div class="wrapper center-xs aligncenter">
+    <div class="wrapper center-xs">
 		<?php echo affwp_theme_tweet_slider(); ?>
 
-		<div class="row center-xs aligncenter">
+		<div class="row center-xs">
             <div class="col-xs-12">
                 <a href="<?php echo site_url( 'testimonials' ); ?>" id="view-testimonials" class="button outline secondary">View testimonials</a>
             </div>

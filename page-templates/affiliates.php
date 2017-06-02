@@ -20,7 +20,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 		$subtitle = __( 'Come on in!', 'themedd' );
 	}
 
-	themedd_post_header(
+	themedd_page_header(
 		array(
 			'title'    => 'Affiliate Area',
 			'subtitle' => $subtitle
@@ -62,7 +62,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 <section class="container-fluid pv-xs-2 pv-lg-4 rationale">
     <div class="wrapper">
 
-        <div class="row center-xs aligncenter">
+        <div class="row center-xs">
             <div class="col-xs-12 col-sm-4">
 
                 <img class="mb-xs-1" width="96" height="96" src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/original/affiliates-refer-and-earn.svg'; ?>" />
@@ -121,7 +121,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 
 	</div>
 
-	<div class="wrapper aligncenter view-agreement">
+	<div class="wrapper center-xs view-agreement">
 		<p>View our <a href="<?php echo site_url( '/affiliate-agreement/' ); ?>" target="_blank">affiliate agreement</a> for more information</p>
 	</div>
 
@@ -129,7 +129,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 
 
 <section class="container-fluid mb-xs-4">
-    <div class="wrapper slim aligncenter">
+    <div class="wrapper slim center-xs">
 		<a href="<?php echo site_url( '/affiliates/join/' ); ?>" class="button large mb-xs-1">Become an affiliate</a>
 
 		<p>Already an affiliate? <a href="<?php echo site_url( '/affiliates/login' ); ?>">Log in now</a></p>

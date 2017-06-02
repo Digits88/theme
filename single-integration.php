@@ -95,7 +95,7 @@ $how_it_works = get_post_meta( get_the_ID(), '_affwp_integration_how_it_works', 
 <section class="container-fluid pv-xs-2 pv-lg-4">
 
 	<div class="wrapper slim entry-content">
-		<div class="row center-xs">
+		<div class="row">
 
 			<div class="col-xs-12 col-md-7">
 
@@ -153,7 +153,7 @@ $how_it_works = get_post_meta( get_the_ID(), '_affwp_integration_how_it_works', 
 	<section class="container-fluid pv-xs-2 pv-lg-4">
 
 	    <div class="wrapper">
-	        <h3 class="aligncenter mb-lg-4">Integration-specific features</h3>
+	        <h3 class="mb-lg-4">Integration-specific features</h3>
 
 			<div class="row start-xs">
 			<?php foreach ( $terms as $term ) : ?>
@@ -214,13 +214,13 @@ $args = array(
 <section class="highlight pv-xs-8 container-fluid">
     <div class="wrapper">
 
-        <div class="center-xs mb-xs-4 aligncenter">
+        <div class="center-xs mb-xs-4">
             <h1>Supercharge your affiliate program with add-ons</h1>
         </div>
 
         <div class="mb-xs-8">
-            <div class="center-xs aligncenter">
-                <h4 class="mb-xs-0 aligncenter">Use these Pro add-ons with your <strong><?php echo $integration_name; ?></strong>-powered site</h4>
+            <div class="center-xs">
+                <h4 class="mb-xs-0">Use these Pro add-ons with your <strong><?php echo $integration_name; ?></strong>-powered site</h4>
                 <p>(Available with the Professional and Ultimate license)</p>
             </div>
         	<div class="slider">
@@ -298,7 +298,7 @@ $args = array(
         ?>
 
         <?php if ( $free_add_ons ) : ?>
-        <div class="center-xs aligncenter">
+        <div class="center-xs">
             <h4 class="mb-xs-0">Use these Official free add-ons with your <strong><?php echo $integration_name; ?></strong>-powered site</h4>
             <p>(Available for all license holders, woohoo!)</p>
         </div>

@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => '"Do you know why I love AffiliateWP? Because they make me look good."', 'subtitle' => 'Don’t just take our word for it, see why our awesome customers love AffiliateWP below.' ) ); ?>
+<?php themedd_page_header( array( 'title' => '"Do you know why I love AffiliateWP? Because they make me look good."', 'subtitle' => 'Don’t just take our word for it, see why our awesome customers love AffiliateWP below.' ) ); ?>
 
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight3 testimonials">
@@ -39,7 +39,7 @@ get_header(); ?>
 <?php endif; ?>
 
 <section class="container-fluid tweets highlight pv-xs-4">
-	<div class="wrapper center-xs aligncenter">
+	<div class="wrapper center-xs">
 		<?php echo affwp_theme_tweet_slider(); ?>
 	</div>
 </section>

@@ -20,7 +20,7 @@ function affwp_theme_remove_header( $return ) {
 
 	return $return;
 }
-add_filter( 'themedd_post_header', 'affwp_theme_remove_header' );
+add_filter( 'themedd_page_header', 'affwp_theme_remove_header' );
 
 /**
  * Replace the discount code at checkout with the word "Discount"
@@ -233,10 +233,10 @@ function affwp_theme_edd_success_page_content() {
 	<section class="signup box mb-xs-4">
 
 		<div class="mb-xs-2">
-			<h3 class="signup-header aligncenter">You just saved <?php echo $discount_amount; ?>% on AffiliateWP during our <?php echo $discount_title; ?>!</h3>
+			<h3 class="signup-header center-xs">You just saved <?php echo $discount_amount; ?>% on AffiliateWP during our <?php echo $discount_title; ?>!</h3>
 		</div>
 
-		<div class="aligncenter">
+		<div class="center-xs">
 			<a class="button large twitter" href="https://twitter.com/intent/tweet/?text=<?php echo $tweet; ?>&amp;url=<?php echo $url; ?>" target="_blank">
 				<svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
 					<g>

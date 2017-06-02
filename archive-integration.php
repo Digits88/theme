@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => 'One-click integration with your favorite WordPress plugins', 'subtitle' => 'AffiliateWP integrates beautifully with popular eCommerce, membership, form, and invoice plugins for WordPress.' ) ); ?>
+<?php themedd_page_header( array( 'title' => 'One-click integration with your favorite WordPress plugins', 'subtitle' => 'AffiliateWP integrates beautifully with popular eCommerce, membership, form, and invoice plugins for WordPress.' ) ); ?>
 
 <?php if ( have_posts() ) : ?>
 <section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-4">
@@ -17,7 +17,7 @@ get_header(); ?>
 
 	?>
 
-	<div class="wrapper wide integration-filter aligncenter">
+	<div class="wrapper wide integration-filter center-xs">
 	<?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
 		<a class="button small" href="#" data-filter="all">All</a>
 		<?php foreach ( $terms as $term ) : ?>

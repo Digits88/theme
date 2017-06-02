@@ -65,7 +65,7 @@ function affwp_theme_integration_taxonomy_breadcrumb() {
 
 	<?php
 }
-add_action( 'themedd_post_header_wrapper_start', 'affwp_theme_integration_taxonomy_breadcrumb' );
+add_action( 'themedd_page_header_wrapper_start', 'affwp_theme_integration_taxonomy_breadcrumb' );
 
 /**
  * Integration not supported notice
@@ -76,7 +76,7 @@ function affwp_theme_integration_notice() {
 	?>
 
 	<div class="wrapper">
-		<div class="row center-xs aligncenter">
+		<div class="row center-xs">
 			<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
 				<p>Is your preferred plugin not listed? We may still support it through our generic referral tracking script. <a href="http://docs.affiliatewp.com/article/66-generic-referral-tracking-script" target="_blank">Learn more &rarr;</a></p>
 			</div>

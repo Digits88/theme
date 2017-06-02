@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => 'Take a closer look at AffiliateWP', 'subtitle' => 'Explore AffiliateWP’s core features, supported integrations, and view screenshots of the entire plugin.' ) ); ?>
+<?php themedd_page_header( array( 'title' => 'Take a closer look at AffiliateWP', 'subtitle' => 'Explore AffiliateWP’s core features, supported integrations, and view screenshots of the entire plugin.' ) ); ?>
 
 <section class="container-fluid highlight add-ons pv-xs-4">
 	<div class="container-fluid wrapper">

@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => 'The saying goes, "If you want something done well, do it yourself."' ) ); ?>
+<?php themedd_page_header( array( 'title' => 'The saying goes, "If you want something done well, do it yourself."' ) ); ?>
 
 <section class="container-fluid mb-xs-4">
     <div class="wrapper slim">
@@ -26,7 +26,7 @@ get_header(); ?>
 
 <section class="container-fluid mb-xs-4">
 	<div class="wrapper slim">
-		<h1 class="aligncenter">Our story</h1>
+		<h1 class="center-xs">Our story</h1>
 
 		<p>In late 2010, Pippin Williamson was beginning to build his plugin development resource at <a href="https://pippinsplugins.com" target="_blank">PippinsPlugins.com</a>. Pippin needed a membership framework that allowed him to provide this content to members only, so he created <a href="https://restrictcontentpro.com" target="_blank">Restrict Content Pro</a> - a simple yet powerful membership plugin for WordPress. Soon after that, it became apparent that an eCommerce platform was needed to sell the plugins that Pippin was building, leading to the development of <a href="https://easydigitaldownloads.com" target="_blank">Easy Digital Downloads</a>.</p>
 
@@ -47,7 +47,7 @@ get_header(); ?>
 	</div>
     <div class="wrapper">
 
-		<h1 class="page-title aligncenter mb-xs-4">
+		<h1 class="page-title center-xs mb-xs-4">
 			<span class="entry-title-primary">Teamwork makes the dream work</span>
 			<span class="subtitle">Your AffiliateWP team (and Alf’s trusted employees)</span>
 		</h1>

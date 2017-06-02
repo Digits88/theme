@@ -41,7 +41,7 @@ function affwp_theme_tweet_slider() {
     $tweets = affwp_theme_get_tweets();
 
     if ( $tweets ) : ?>
-            <h3 class="aligncenter">What people are saying on <a href="https://twitter.com/affwp/timelines/458773013576417280" target="_blank">Twitter</a></h3>
+            <h3>What people are saying on <a href="https://twitter.com/affwp/timelines/458773013576417280" target="_blank">Twitter</a></h3>
             <div class="row center-xs mb-xs-2">
 
                 <div class="col-xs tweet-slider-wrap">
@@ -59,7 +59,7 @@ function affwp_theme_tweet_slider() {
                             $avatar      = $user_info['avatar'];
 							$avatar      = preg_replace( "/^http:/i", "https:", $avatar );
                         ?>
-                            <li class="tweet aligncenter">
+                            <li class="tweet">
                                 <div class="avatar">
                                   <img alt="<?php echo $name; ?>" src="<?php echo $avatar; ?>">
                                 </div>

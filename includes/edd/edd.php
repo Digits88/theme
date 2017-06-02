@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function affwp_theme_themedd_single_download_post_header() {
 
 	if ( is_singular( 'download' ) ) {
-		themedd_post_header();
+		themedd_page_header();
 	}
 
 }
@@ -144,18 +144,15 @@ add_action( 'wp_head', 'affwp_theme_edd_optimizely_revenue_tracking');
  * @since 1.0.0
  */
 function affwp_theme_learn_more() {
+?>
 
-	if ( ! has_term( 'pro', 'download_category', get_the_ID() ) ) {
-		return;
-	}
-
-	?>
+<?php if ( has_term( 'pro', 'download_category', get_the_ID() ) ) : ?>
 
 	<footer>
 		<a href="<?php echo get_permalink( get_the_ID() ); ?>">Learn more</a>
 	</footer>
 
-	<?php
+<?php endif;
 }
 add_action( 'edd_download_after', 'affwp_theme_learn_more' );
 
@@ -411,7 +408,7 @@ function affwp_theme_add_on_supported_integrations_modal() {
 	?>
 	<div id="supported-integrations" class="popup wide entry-content mfp-with-anim mfp-hide">
 
-		<h1 class="page-title aligncenter">
+		<h1 class="page-title center-xs">
 			<span class="entry-title-primary">Compatible integrations</span>
 			<span class="subtitle"><?php echo get_the_title(); ?> is compatible with the following integrations.</span>
 		</h1>
@@ -539,7 +536,7 @@ function affwp_theme_show_related_pro_add_ons() {
 	<section class="highlight container-fluid related-add-ons mb-xs-2 mb-lg-4">
 	    <div class="wrapper">
 
-			<header class="center-xs pv-xs-2 pv-lg-4 aligncenter">
+			<header class="center-xs pv-xs-2 pv-lg-4">
 				<h3>Explore more <?php echo $type; ?> add-ons</h3>
 			</header>
 

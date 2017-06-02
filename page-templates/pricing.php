@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <?php
-	themedd_post_header(
+	themedd_page_header(
 		array(
 			'title'    => 'Start making more money, risk-free',
 			'subtitle' => 'Purchase in confidence with our 30 Day Money Back Guarantee ' . affwp_show_refund_policy_link(),
@@ -157,7 +157,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 <section class="container-fluid pv-xs-2 pv-lg-4">
 
 <div class="row center-xs">
-	<div class="col-xs-12 col-sm-8 aligncenter">
+	<div class="col-xs-12 col-sm-8">
 
 		<a href="#pricing" class="scroll button large">Ready to increase sales?</a>
 	</div>

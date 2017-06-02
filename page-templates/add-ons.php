@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php themedd_post_header( array( 'title' => 'Make AffiliateWP more powerful with add-ons', 'subtitle' => 'Extend AffiliateWP with pro, free and 3rd-party add-ons.' ) ); ?>
+<?php themedd_page_header( array( 'title' => 'Make AffiliateWP more powerful with add-ons', 'subtitle' => 'Extend AffiliateWP with pro, free and 3rd-party add-ons.' ) ); ?>
 
 <section class="container-fluid highlight add-ons pv-xs-1">
 	<div class="wrapper">

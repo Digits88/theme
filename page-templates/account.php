@@ -10,7 +10,7 @@ get_header();
 
 <div id="tabs">
 
-	<?php themedd_post_header(); ?>
+	<?php themedd_page_header(); ?>
 
 	<section class="container-fluid account mb-xs-4">
 		<div class="wrapper">

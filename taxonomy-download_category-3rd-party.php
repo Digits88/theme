@@ -8,10 +8,9 @@ get_header(); ?>
 
 <?php
 
-themedd_post_header(
+themedd_page_header(
 	array(
 		'title'    => single_cat_title( '', false ),
-	//	'subtitle' => term_description( '', 'download_category' ),
 		'subtitle' => 'Free or paid add-ons created by other developers',
 		'classes'  => array( 'highlight' )
 	)
@@ -21,7 +20,7 @@ themedd_post_header(
 
 <section class="container-fluid pv-xs-2 pv-sm-3 pv-lg-4">
     <div class="wrapper">
-		<div class="row center-xs aligncenter">
+		<div class="row center-xs">
 			<div class="col-xs-12 col-sm-9">
 				<p class="intro mb-xs-0">
 					The following add-ons are <strong>not official AffiliateWP-built add-ons</strong>, and are therefore only supported by the developers who maintain them.

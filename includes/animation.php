@@ -82,7 +82,7 @@ function affwp_theme_featured_icon_animation( $post_id = 0 ) {
 	}
 
 }
-add_action( 'themedd_post_header_end', 'affwp_theme_featured_icon_animation' );
+add_action( 'themedd_page_header_end', 'affwp_theme_featured_icon_animation' );
 
 /**
  * Get the SVG objects
@@ -189,7 +189,7 @@ function affwp_theme_animation_affiliate_landing_pages_add_on() {
 	if ( ! is_singular() ) {
 		return;
 	}
-	
+
 	$post = get_post( get_the_ID() );
 
 	if ( ! (
