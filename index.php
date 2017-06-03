@@ -20,7 +20,7 @@ if ( $query->have_posts() ) : ?>
 
 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-	<div class="hero <?php echo affwp_theme_blog_hero_classes( get_the_ID() ); ?>">
+	<div class="hero center-xs <?php echo affwp_theme_blog_hero_classes( get_the_ID() ); ?>">
 
 		<header class="page-header col-xs-12 blog-featured pv-xs-4">
 			<a href="<?php echo the_permalink(); ?>" title="Read now" class="read-now">
@@ -63,7 +63,7 @@ if ( $query->have_posts() ) : ?>
 
 <?php if ( have_posts() ) : ?>
 
-<section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-1">
+<section class="container highlight pv-xs-2 pv-sm-3 pv-lg-1">
     <div class="wrapper mb-xs-2 mb-lg-4">
 		<div class="grid row">
 			<?php while ( have_posts() ) : the_post();
@@ -130,7 +130,7 @@ if ( $query->have_posts() ) : ?>
 </section>
 <?php endif; ?>
 
-<section class="container-fluid">
+<section class="container">
 	<?php echo affwp_theme_get_signup(); ?>
 </section>
 <?php get_footer(); ?>

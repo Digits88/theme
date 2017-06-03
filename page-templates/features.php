@@ -5,14 +5,21 @@
 
 get_header(); ?>
 
-<?php themedd_page_header( array( 'title' => 'Packed full of features', 'subtitle' => 'Yes, <em>all</em> of these features are included in AffiliateWP!' ) ); ?>
+<?php
+themedd_page_header(
+	array(
+		'title'    => 'Packed full of features',
+		'subtitle' => 'Yes, <em>all</em> of these features are included in AffiliateWP!',
+		'classes'  => array( 'center-xs' )
+	)
+);
+?>
 
-<section class="container-fluid features">
-	<div class="wrapper">
+<div class="wrapper">
+	<section class="container features">
 		<?php affwp_theme_features_html( array( 'columns' => 3 ) ); ?>
-	</div>
-</section>
-
+	</section>
+</div>
 
 
 <?php

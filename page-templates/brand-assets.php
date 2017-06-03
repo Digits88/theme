@@ -11,12 +11,12 @@ themedd_page_header(
 	array(
 		'title' => 'Brand Assets',
 		'subtitle' => 'Thanks for your interest in AffiliateWP!',
-		'classes' => array( 'highlight' )
+		'classes' => array( 'highlight', 'center-xs' )
 	)
 );
 ?>
 
-<section class="container-fluid pv-xs-2 pv-sm-4 brand-assets">
+<section class="container pv-xs-2 pv-sm-4 brand-assets">
 	<div class="row center-xs">
 		<div class="col-xs-12 col-sm-8">
 			<p class="mb-xs-4">Below are a few guidelines for using AffiliateWP’s brand resources, please take a moment to familiarize yourself with them. You can download individual assets in each section, or you can download everything all at once below.</p>
@@ -30,7 +30,7 @@ themedd_page_header(
  * Colors
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-md-4 colors brand-assets">
+<section class="container pv-xs-2 pv-md-4 colors brand-assets">
 
 	<div class="row center-xs">
 
@@ -82,7 +82,7 @@ themedd_page_header(
  * Logo guidelines
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-md-4 bg logos brand-assets">
+<section class="container pv-xs-2 pv-md-4 bg logos brand-assets">
 
 	<div class="row center-xs">
 
@@ -215,7 +215,7 @@ themedd_page_header(
  * A little room to breathe
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-md-4 brand-assets center-xs">
+<section class="container pv-xs-2 pv-md-4 brand-assets center-xs">
 
 	<div class="row center-xs">
 		<div class="col-xs-12 col-sm-6">
@@ -233,7 +233,7 @@ themedd_page_header(
  * It's AffiliateWP
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-md-8 brand-assets">
+<section class="container pv-xs-2 pv-md-8 brand-assets">
 
 	<div class="row center-xs">
 		<div class="col-xs-12 col-sm-6">
@@ -301,7 +301,7 @@ themedd_page_header(
  * Say hi to Alf!
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-md-4 mascots">
+<section class="container pv-xs-2 pv-md-4 mascots">
 
 	<div class="row center-xs mb-xs-2">
 		<div class="col-xs-12 col-sm-6">
@@ -367,7 +367,7 @@ themedd_page_header(
  * Please don't hurt him
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-md-4 mascots incorrect-mascots">
+<section class="container pv-xs-2 pv-md-4 mascots incorrect-mascots">
 
 	<div class="row center-xs mb-xs-2">
 		<div class="col-xs-12 col-sm-6">
@@ -437,7 +437,7 @@ themedd_page_header(
 
 </section>
 
-<section class="container-fluid center-xs brand-assets pv-xs-2 pv-md-4 ">
+<section class="container center-xs brand-assets pv-xs-2 pv-md-4 ">
 	<div class="wrapper">
 		<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/alf.zip'; ?>" target="_blank" class="button large">Download Alf</a>
 	</div>
@@ -449,7 +449,7 @@ themedd_page_header(
  * Screenshots
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-md-4 mascots incorrect-mascots">
+<section class="container pv-xs-2 pv-md-4 mascots incorrect-mascots">
 
 	<div class="row center-xs">
 		<div class="col-xs-12 col-sm-6">

@@ -15,7 +15,7 @@ $integration_name = get_the_title( get_the_ID() );
  * Main content
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-lg-4 highlight">
+<section class="container pv-xs-2 pv-lg-4 highlight">
     <div class="wrapper">
 
     	<div class="content-area">
@@ -92,7 +92,7 @@ $how_it_works = get_post_meta( get_the_ID(), '_affwp_integration_how_it_works', 
 
 <?php if ( ! empty( $how_it_works ) ): // new layout with how it works on left, and featues on right ?>
 
-<section class="container-fluid pv-xs-2 pv-lg-4">
+<section class="container pv-xs-2 pv-lg-4">
 
 	<div class="wrapper slim entry-content">
 		<div class="row">
@@ -150,7 +150,7 @@ $how_it_works = get_post_meta( get_the_ID(), '_affwp_integration_how_it_works', 
 	$terms = get_the_terms( get_the_ID(), 'feature' );
 
 	if ( $terms && ! is_wp_error( $terms ) ) : ?>
-	<section class="container-fluid pv-xs-2 pv-lg-4">
+	<section class="container pv-xs-2 pv-lg-4">
 
 	    <div class="wrapper">
 	        <h3 class="mb-lg-4">Integration-specific features</h3>
@@ -211,7 +211,7 @@ $args = array(
 ?>
 
 <?php if ( $pro_add_ons ) : ?>
-<section class="highlight pv-xs-8 container-fluid">
+<section class="highlight pv-xs-8 container">
     <div class="wrapper">
 
         <div class="center-xs mb-xs-4">
@@ -400,7 +400,7 @@ $posts = get_posts( $args );
 ?>
 
 <?php if ( $posts ) : ?>
-<section class="container-fluid highlight pv-xs-2 pv-lg-4">
+<section class="container highlight pv-xs-2 pv-lg-4">
     <div class="wrapper">
         <div class="row center-xs">
             <div class="col-xs-12 col-sm-8">

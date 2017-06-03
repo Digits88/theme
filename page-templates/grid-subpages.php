@@ -29,7 +29,7 @@ $child_pages = get_pages( $args );
 	<div class="wrapper">
 	    <div class="content-area">
 
-			<section class="container-fluid">
+			<section class="container">
 			<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
@@ -42,7 +42,7 @@ $child_pages = get_pages( $args );
 			</section>
 
 			<?php if ( $child_pages ) : ?>
-			<section class="container-fluid">
+			<section class="container">
 			<div class="grid row mb-xs-4">
 				<?php foreach ( $child_pages as $page ) :
 

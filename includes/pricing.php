@@ -19,7 +19,7 @@ function affwp_theme_pricing_calculator() {
 	}
 
 ?>
-	<section class="pricing-calculator container-fluid action pv-xs-4">
+	<section class="pricing-calculator container action pv-xs-4">
 		<div class="wrapper">
 			<div class="row middle-xs">
 				<div class="col-xs-12 col-md-7 mb-xs-2 mb-md-0">
@@ -284,7 +284,8 @@ function affwp_themedd_call_to_action() {
 
 	?>
 
-	<section class="container-fluid highlight action pv-xs-4 cta-get-started">
+	<?php /*
+	<section class="container highlight action pv-xs-4 cta-get-started">
 	    <div class="wrapper">
 
 	        <div class="row middle-xs">
@@ -303,33 +304,61 @@ function affwp_themedd_call_to_action() {
 
 	    </div>
 	</section>
+	*/ ?>
 
-	<section class="container-fluid section-grey pv-xs-2 cta-get-started-bottom">
+	<section class="highlight action pv-xs-4 cta-get-started">
 		<div class="wrapper">
-			<div class="row row middle-xs">
+			<div class="container">
+				<div class="row middle-xs">
+					<div class="col-xs-12 col-sm-7 mb-xs-2 mb-sm-0 text-center-xs text-left-sm">
+						<h1 class="header">Get more sales with AffiliateWP</h1>
+						<p>Our customers tell us that AffiliateWP is easy to use, reliable, and <em>just works</em>. They love it, and we think you’ll love it too. Ready to get started? Try AffiliateWP risk-free today, and start growing your business with affiliate marketing.</p>
+					</div>
 
-				<div class="col-xs-12 col-sm-4 mb-xs-2 mb-sm-0">
-					<svg width="48px" height="48px">
-	                    <use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-feature-money-back-guarantee'; ?>"></use>
-	                </svg>
-					<p>30 day <a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">money back guarantee</a></p>
+					<div class="col-xs col-sm-5 end-sm text-center-xs text-left-sm">
+						<a href="<?php echo site_url( 'pricing' ); ?>" class="button outline">Get started now</a>
+					</div>
+
 				</div>
 
-				<div class="col-xs-12 col-sm-4 center-md mb-xs-2 mb-sm-0">
-					<svg width="48px" height="48px">
-	                    <use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-feature-secure-payment'; ?>"></use>
-	                </svg>
-					<p>Secure online payment</p>
-				</div>
-
-				<div class="col-xs-12 col-sm-4 end-md">
-					<svg width="48px" height="48px">
-	                    <use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-feature-support'; ?>"></use>
-	                </svg>
-					<p>Fast and friendly <a href="<?php echo site_url( 'support' ); ?>">support</a></p>
-				</div>
-
+				<div id="graph" class="ct-chart"></div>
 			</div>
+
+
+
+		</div>
+	</section>
+
+
+	<section class="section-grey pv-xs-2 cta-get-started-bottom">
+		<div class="wrapper">
+			<div class="container">
+				<div class="row row middle-xs">
+
+					<div class="col-xs-12 col-sm-4 mb-xs-2 mb-sm-0">
+						<svg width="48px" height="48px">
+		                    <use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-feature-money-back-guarantee'; ?>"></use>
+		                </svg>
+						<p>30 day <a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">money back guarantee</a></p>
+					</div>
+
+					<div class="col-xs-12 col-sm-4 center-md mb-xs-2 mb-sm-0">
+						<svg width="48px" height="48px">
+		                    <use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-feature-secure-payment'; ?>"></use>
+		                </svg>
+						<p>Secure online payment</p>
+					</div>
+
+					<div class="col-xs-12 col-sm-4 end-md">
+						<svg width="48px" height="48px">
+		                    <use xlink:href="<?php echo get_stylesheet_directory_uri() . '/images/svgs/svg-defs.svg#icon-feature-support'; ?>"></use>
+		                </svg>
+						<p>Fast and friendly <a href="<?php echo site_url( 'support' ); ?>">support</a></p>
+					</div>
+
+				</div>
+			</div>
+
 		</div>
 	</section>
 
@@ -368,7 +397,7 @@ function affwp_theme_pricing_table() {
 
 ?>
 
-	<section class="container-fluid pricing-table" id="pricing">
+	<section class="container pricing-table" id="pricing">
 
 			<?php
 
@@ -388,7 +417,7 @@ function affwp_theme_pricing_table() {
 					$in_cart = $cart_items ? in_array( $price_id, $price_ids ) : '';
 					$in_cart_class = $cart_items && in_array( $price_id, $price_ids ) ? ' in-cart' : '';
 				?>
-	            <div class="col-xs-12 col-sm-6 col-lg-3 align-xs-center mb-xs-5 mb-sm-2<?php echo $in_cart_class; ?>">
+	            <div class="col-xs-12 col-sm-6 col-lg-3 center-xs mb-xs-5 mb-sm-2<?php echo $in_cart_class; ?>">
 	                <div class="table-option pv-xs-2">
 						<?php if ( $in_cart ) : ?>
 						<span>In your cart</span>
@@ -441,7 +470,7 @@ function affwp_theme_pricing_table() {
 						$highlight_class = '';
 					}
 				?>
-	            <div class="col-xs-12 col-sm-6 col-lg-3 align-xs-center mb-xs-2<?php echo $highlight_class; ?><?php echo $in_cart_class; ?>">
+	            <div class="col-xs-12 col-sm-6 col-lg-3 center-xs mb-xs-2<?php echo $highlight_class; ?><?php echo $in_cart_class; ?>">
 
 	                <div class="table-option pv-xs-2">
 						<?php if ( ! $cart_items ) : ?>
@@ -494,7 +523,7 @@ function affwp_theme_pricing_table() {
 					$in_cart = $cart_items ? in_array( $price_id, $price_ids ) : '';
 					$in_cart_class = $cart_items && in_array( $price_id, $price_ids ) ? ' in-cart' : '';
 				?>
-	            <div class="col-xs-12 col-sm-6 col-lg-3 align-xs-center mb-xs-2<?php echo $in_cart_class; ?>">
+	            <div class="col-xs-12 col-sm-6 col-lg-3 center-xs mb-xs-2<?php echo $in_cart_class; ?>">
 	                <div class="table-option pv-xs-2">
 						<?php if ( $in_cart ) : ?>
 						<span>In your cart</span>
@@ -535,7 +564,7 @@ function affwp_theme_pricing_table() {
 					$in_cart = $cart_items ? in_array( $price_id, $price_ids ) : '';
 					$in_cart_class = $cart_items && in_array( $price_id, $price_ids ) ? ' in-cart' : '';
 				?>
-	            <div class="col-xs-12 col-sm-6 col-lg-3 align-xs-center mb-xs-2<?php echo $in_cart_class; ?>">
+	            <div class="col-xs-12 col-sm-6 col-lg-3 center-xs mb-xs-2<?php echo $in_cart_class; ?>">
 	                <div class="table-option pv-xs-2">
 						<?php if ( $in_cart ) : ?>
 						<span>In your cart</span>

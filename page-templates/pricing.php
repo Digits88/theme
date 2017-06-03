@@ -10,7 +10,7 @@ get_header(); ?>
 		array(
 			'title'    => 'Start making more money, risk-free',
 			'subtitle' => 'Purchase in confidence with our 30 Day Money Back Guarantee ' . affwp_show_refund_policy_link(),
-			'classes'  => array( 'mb-sm-4' )
+			'classes'  => array( 'mb-sm-4', 'center-xs' )
 		)
 	);
 ?>
@@ -30,7 +30,7 @@ get_header(); ?>
 ?>
 
 <?php /*
-<section class="container-fluid pv-xs-2 pv-lg-4 highlight">
+<section class="container pv-xs-2 pv-lg-4 highlight">
     <div class="wrapper center-xs">
 		<h2>30 Day Money Back Guarantee</h2>
         <p>We stand behind our product 100% <?php echo affwp_show_refund_policy_link(); ?></p>
@@ -43,7 +43,7 @@ $count_pro_add_ons           = function_exists( 'affwp_theme_get_add_on_count' )
 $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' ) ? affwp_theme_get_add_on_count( 'official-free' ) : '';
 ?>
 
-<section class="container-fluid faqs faqs-new">
+<section class="container faqs faqs-new">
 	<div class="wrapper pv-xs-2 pv-sm-4">
 	<h2 class="center-sm mb-sm-4">Questions and Answers</h2>
 
@@ -145,7 +145,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
  */
 ?>
 
-<section class="tweets container-fluid highlight pv-xs-2 pv-lg-8">
+<section class="tweets container highlight pv-xs-2 pv-lg-8">
     <div class="wrapper wide center-xs">
 		<?php echo affwp_theme_tweet_slider(); ?>
 
@@ -154,7 +154,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 </section>
 
 
-<section class="container-fluid pv-xs-2 pv-lg-4">
+<section class="container pv-xs-2 pv-lg-4">
 
 <div class="row center-xs">
 	<div class="col-xs-12 col-sm-8">

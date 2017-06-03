@@ -63,7 +63,7 @@ $child_pages = get_pages( $args );
 				?>
 
 
-                <section class="container-fluid pv-xs-2 pv-md-4<?php echo $classes; ?>">
+                <section class="container pv-xs-2 pv-md-4<?php echo $classes; ?>">
 
                         <div class="row middle-xs">
 

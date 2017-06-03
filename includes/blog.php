@@ -4,6 +4,29 @@ if ( ! defined( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE' ) ) {
 	define( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE', 9 );
 }
 
+/**
+ * Remove the categories and tags for now. We'll add these at a later date, in a different location
+ *
+ * @since 1.5.1
+ */
+remove_action( 'themedd_entry_content_end', 'themedd_show_entry_footer' );
+
+/**
+ * Hide sidebar on single posts.
+ * We don't use any widgets in the sidebar but good to do just in case.
+ *
+ * @since 1.5.1
+ */
+function affwp_theme_hide_sidebar( $return ) {
+
+	if ( is_singular( 'post' ) ) {
+		$return = false;
+	}
+
+	return $return;
+
+}
+add_filter( 'themedd_show_sidebar', 'affwp_theme_hide_sidebar' );
 
 /**
  * Remove standard post header on single posts
@@ -47,12 +70,12 @@ function affwp_theme_blog_header() {
 
 		<?php do_action( 'affwp_theme_hero_start' ); ?>
 
-		<header class="page-header col-xs-12 blog-featured pv-xs-2 pv-sm-4">
+		<header class="page-header col-xs-12 blog-featured pv-xs-2 pv-sm-4 center-xs">
 			<div class="wrapper">
 
 				<?php do_action( 'themedd_page_header_start' ); ?>
 
-				<h1 class="<?php echo get_post_type(); ?>-title">
+				<h1 class="<?php echo get_post_type(); ?>-title center-xs">
 					<?php echo get_the_title(); ?>
 				</h1>
 

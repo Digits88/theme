@@ -18,7 +18,7 @@ $args = array(
 $query = new WP_Query( $args );
 
 if ( $query->have_posts() ) : ?>
-<section class="container-fluid news section-grey">
+<section class="container news section-grey">
     <div class="wrapper">
 		<div class="row pv-xs-2">
 			<div class="col-xs-12 center-xs">
@@ -38,7 +38,7 @@ if ( $query->have_posts() ) : ?>
  * Features
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-lg-4 rationale">
+<section class="container pv-xs-2 pv-lg-4 rationale">
     <div class="wrapper">
 
 		<h1 class="page-title center-xs mb-xs-4">
@@ -243,7 +243,7 @@ if ( $query->have_posts() ) : ?>
 ?>
 
 <?php if ( $gallery ) : ?>
-<section class="container-fluid pv-xs-2 pv-lg-4 screenshots center-xs">
+<section class="container pv-xs-2 pv-lg-4 screenshots center-xs">
 	<div class="wrapper">
 		<a href="<?php echo site_url( 'screenshots'); ?>" class="button large outline secondary">See all <?php echo affwp_theme_screenshot_count(); ?> screenshots</a>
     </div>
@@ -255,7 +255,7 @@ if ( $query->have_posts() ) : ?>
  * Features
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-lg-4 features">
+<section class="container pv-xs-2 pv-lg-4 features">
 	<div class="wrapper">
 
 		<div class="row mb-xs-2 center-xs">
@@ -296,7 +296,7 @@ if ( $integrations->have_posts() ) : ?>
  * Integrations
  */
  ?>
-<section class="container-fluid action pv-xs-4 pv-sm-8 integrations">
+<section class="container action pv-xs-4 pv-sm-8 integrations">
     <div class="wrapper wide">
 
 		<div class="row">
@@ -381,7 +381,7 @@ if ( $integrations->have_posts() ) : ?>
     });
 </script>
 
-<section class="container-fluid highlight used-by middle-xs center-xs">
+<section class="container highlight used-by middle-xs center-xs">
     <div class="wrapper full-width">
         <h4>Some of the awesome companies that use AffiliateWP</h4>
 
@@ -435,7 +435,7 @@ if ( $integrations->have_posts() ) : ?>
  */
 ?>
 
-<section id="section-pricing" class="container-fluid pv-xs-4 pv-lg-8">
+<section id="section-pricing" class="container pv-xs-4 pv-lg-8">
 
 	<div class="wrapper wide">
 
@@ -457,7 +457,7 @@ if ( $integrations->have_posts() ) : ?>
  */
 ?>
 <?php if ( affwp_theme_get_tweets() ) : ?>
-<section class="tweets container-fluid highlight pv-xs-2 pv-lg-8">
+<section class="tweets container highlight pv-xs-2 pv-lg-8">
     <div class="wrapper center-xs">
 		<?php echo affwp_theme_tweet_slider(); ?>
 

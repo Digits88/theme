@@ -29,7 +29,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 
 ?>
 
-<section class="container-fluid">
+<section class="container">
     <div class="wrapper">
 		<?php affiliate_wp()->templates->get_template_part( 'dashboard' ); ?>
 	</div>
@@ -43,13 +43,12 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
  */
 ?>
 
-<div class="affiliates-header animating">
+<div class="affiliates-header animating center-xs">
 	<header class="page-header">
 		<h1 class="page-title">
 			<span class="entry-title-primary">Refer customers and earn cash</span>
 			<span class="subtitle">Use and love AffiliateWP? Become an affiliate and earn 20% commission on each successful sale you refer!</span>
 		</h1>
-
 	</header>
 </div>
 
@@ -59,7 +58,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
  * Features
  */
 ?>
-<section class="container-fluid pv-xs-2 pv-lg-4 rationale">
+<section class="container pv-xs-2 pv-lg-4 rationale">
     <div class="wrapper">
 
         <div class="row center-xs">
@@ -93,7 +92,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
     </div>
 </section>
 
-<section class="container-fluid highlight affiliate-program-highlights pv-xs-2 pv-xs-4 mb-xs-2 mb-sm-4">
+<section class="container highlight affiliate-program-highlights pv-xs-2 pv-xs-4 mb-xs-2 mb-sm-4">
     <div class="wrapper">
 		<div class="row">
 
@@ -128,7 +127,7 @@ if ( function_exists( 'affwp_is_affiliate' ) && affwp_is_affiliate() ) : ?>
 </section>
 
 
-<section class="container-fluid mb-xs-4">
+<section class="container mb-xs-4">
     <div class="wrapper slim center-xs">
 		<a href="<?php echo site_url( '/affiliates/join/' ); ?>" class="button large mb-xs-1">Become an affiliate</a>
 

@@ -12,7 +12,7 @@ get_header();
 
 	<?php themedd_page_header(); ?>
 
-	<section class="container-fluid account mb-xs-4">
+	<section class="container account mb-xs-4">
 		<div class="wrapper">
 
 			<?php
@@ -34,7 +34,7 @@ get_header();
 			<?php endif; ?>
 
 			<?php if ( is_user_logged_in() ) : ?>
-			<div class="row container-fluid">
+			<div class="row container">
 
 				<div class="col-xs-12 col-md-2 account-nav">
 

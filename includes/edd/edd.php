@@ -533,7 +533,7 @@ function affwp_theme_show_related_pro_add_ons() {
 
 	<?php if ( $pro_add_ons ) : ?>
 
-	<section class="highlight container-fluid related-add-ons mb-xs-2 mb-lg-4">
+	<section class="highlight container related-add-ons mb-xs-2 mb-lg-4">
 	    <div class="wrapper">
 
 			<header class="center-xs pv-xs-2 pv-lg-4">

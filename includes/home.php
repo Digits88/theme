@@ -26,7 +26,7 @@ function affwp_theme_home_hero_section() {
 		<div class="home-fade"></div>
 		<?php do_action( 'affwp_theme_hero_start' ); ?>
 
-		<section class="container-fluid">
+		<section class="container">
 			<div class="wrapper wide">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-lg-12 pv-xs-2 pv-sm-8 center-xs">

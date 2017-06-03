@@ -8,7 +8,7 @@ get_header(); ?>
 <?php themedd_page_header( array( 'title' => single_cat_title( '', false ), 'subtitle' => term_description( '', 'download_category' ) ) ); ?>
 
 <?php if ( have_posts() ) : ?>
-<section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-1">
+<section class="container highlight pv-xs-2 pv-sm-3 pv-lg-1">
     <div class="wrapper add-ons">
 		<div class="grid row">
 			<?php while ( have_posts() ) : the_post(); ?>

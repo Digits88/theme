@@ -9,7 +9,7 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 
-<section class="container-fluid highlight pv-xs-2 pv-sm-3 pv-lg-1">
+<section class="container highlight pv-xs-2 pv-sm-3 pv-lg-1">
 
 	<div class="wrapper wide mb-xs-2 mb-lg-4">
 		<div class="integration-grid grid row has-overlay">

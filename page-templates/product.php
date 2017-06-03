@@ -7,8 +7,8 @@ get_header(); ?>
 
 <?php themedd_page_header( array( 'title' => 'Take a closer look at AffiliateWP', 'subtitle' => 'Explore AffiliateWP’s core features, supported integrations, and view screenshots of the entire plugin.' ) ); ?>
 
-<section class="container-fluid highlight add-ons pv-xs-4">
-	<div class="container-fluid wrapper">
+<section class="container highlight add-ons pv-xs-4">
+	<div class="container wrapper">
 		<div class="row">
 
 			<div class="col-xs-12 col-sm-6 col-md-4 grid-item">

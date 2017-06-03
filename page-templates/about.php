@@ -5,46 +5,60 @@
 
 get_header(); ?>
 
-<?php themedd_page_header( array( 'title' => 'The saying goes, "If you want something done well, do it yourself."' ) ); ?>
+<?php
+themedd_page_header(
+	array(
+		'title'    => 'The saying goes, "If you want something done well, do it yourself."',
+		'classes'  => array( 'center-xs' )
+	)
+);
+?>
 
-<section class="container-fluid mb-xs-4">
-    <div class="wrapper slim">
+<div class="wrapper slim">
+	<section class="container mb-xs-4">
 
-		<p><strong>So we did.</strong></p>
 
-		<p>We dreamed of an easy-to-use affiliate marketing solution that looked and felt like WordPress. We yearned for a platform that put the utmost importance on reliable tracking and accurate data. And we longed for a system that delivered the features needed to make setting up an affiliate program ridiculously simple.</p>
+			<p><strong>So we did.</strong></p>
 
-		<p>Fed-up with frustrating experiences using other unreliable systems already in the market, we wanted an affiliate system that we <em>loved</em> to use.</p>
+			<p>We dreamed of an easy-to-use affiliate marketing solution that looked and felt like WordPress. We yearned for a platform that put the utmost importance on reliable tracking and accurate data. And we longed for a system that delivered the features needed to make setting up an affiliate program ridiculously simple.</p>
 
-		<p>And so, AffiliateWP was born.</p>
+			<p>Fed-up with frustrating experiences using other unreliable systems already in the market, we wanted an affiliate system that we <em>loved</em> to use.</p>
 
-		<p>With AffiliateWP, you get an easy-to-use, reliable WordPress plugin that gives you the affiliate marketing tools you need to grow your business and make more money. It’s designed to help you easily set up and run a successful affiliate program. AffiliateWP takes the hassle out of affiliate marketing so you can spend time focusing on what is most important &mdash; running your business.</p>
+			<p>And so, AffiliateWP was born.</p>
 
-		<p>AffiliateWP is our dream realized. Our customers love using AffiliateWP, we love using AffiliateWP, and we know you’ll love using it too.</p>
-	</div>
-</section>
+			<p>With AffiliateWP, you get an easy-to-use, reliable WordPress plugin that gives you the affiliate marketing tools you need to grow your business and make more money. It’s designed to help you easily set up and run a successful affiliate program. AffiliateWP takes the hassle out of affiliate marketing so you can spend time focusing on what is most important &mdash; running your business.</p>
 
-<section class="container-fluid mb-xs-4">
-	<div class="wrapper slim">
-		<h1 class="center-xs">Our story</h1>
+			<p>AffiliateWP is our dream realized. Our customers love using AffiliateWP, we love using AffiliateWP, and we know you’ll love using it too.</p>
 
-		<p>In late 2010, Pippin Williamson was beginning to build his plugin development resource at <a href="https://pippinsplugins.com" target="_blank">PippinsPlugins.com</a>. Pippin needed a membership framework that allowed him to provide this content to members only, so he created <a href="https://restrictcontentpro.com" target="_blank">Restrict Content Pro</a> - a simple yet powerful membership plugin for WordPress. Soon after that, it became apparent that an eCommerce platform was needed to sell the plugins that Pippin was building, leading to the development of <a href="https://easydigitaldownloads.com" target="_blank">Easy Digital Downloads</a>.</p>
+	</section>
+</div>
 
-		<p>After Easy Digital Downloads and Restrict Content Pro became prominent players in the eCommerce and membership spaces, a consistent trend arose: both Pippin and his customers were looking for a high-quality affiliate management system to help them grow their businesses. With that realization, the next plugin project became obvious; it was time to venture into the world of Affiliate Marketing.</p>
+<div class="wrapper slim">
+	<section class="container mb-xs-4">
 
-		<p>AffiliateWP was founded in early 2014 with an aim to provide a top-notch, self-hosted, and intuitive affiliate management system for WordPress. And we’re not done yet! We are constantly working to bring you a more robust affiliate marketing offering with consistent updates, new features and new add-ons.</p>
+			<h1 class="center-xs">Our story</h1>
 
-		<p>We’re immensely proud of AffiliateWP, and we can’t wait to hear how AffiliateWP helps you build a successful affiliate program and grow your business.</p>
+			<p>In late 2010, Pippin Williamson was beginning to build his plugin development resource at <a href="https://pippinsplugins.com" target="_blank">PippinsPlugins.com</a>. Pippin needed a membership framework that allowed him to provide this content to members only, so he created <a href="https://restrictcontentpro.com" target="_blank">Restrict Content Pro</a> - a simple yet powerful membership plugin for WordPress. Soon after that, it became apparent that an eCommerce platform was needed to sell the plugins that Pippin was building, leading to the development of <a href="https://easydigitaldownloads.com" target="_blank">Easy Digital Downloads</a>.</p>
 
-		<p>Oh, and meet Alf, our cheeky, friendly leader!</p>
+			<p>After Easy Digital Downloads and Restrict Content Pro became prominent players in the eCommerce and membership spaces, a consistent trend arose: both Pippin and his customers were looking for a high-quality affiliate management system to help them grow their businesses. With that realization, the next plugin project became obvious; it was time to venture into the world of Affiliate Marketing.</p>
 
-	</div>
-</section>
+			<p>AffiliateWP was founded in early 2014 with an aim to provide a top-notch, self-hosted, and intuitive affiliate management system for WordPress. And we’re not done yet! We are constantly working to bring you a more robust affiliate marketing offering with consistent updates, new features and new add-ons.</p>
 
-<section class="container-fluid section-grey pv-xs-2 pv-lg-5 affiliatewp-team">
+			<p>We’re immensely proud of AffiliateWP, and we can’t wait to hear how AffiliateWP helps you build a successful affiliate program and grow your business.</p>
+
+			<p>Oh, and meet Alf, our cheeky, friendly leader!</p>
+
+
+	</section>
+</div>
+
+
+<section class="container section-grey pv-xs-2 pv-lg-5 affiliatewp-team">
+
 	<div id="mascot">
 		<img alt="Alf" src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/about-alf.svg'; ?>">
 	</div>
+
     <div class="wrapper">
 
 		<h1 class="page-title center-xs mb-xs-4">

@@ -12,13 +12,13 @@ themedd_page_header(
 	array(
 		'title'    => single_cat_title( '', false ),
 		'subtitle' => 'Free or paid add-ons created by other developers',
-		'classes'  => array( 'highlight' )
+		'classes'  => array( 'highlight', 'center-xs' )
 	)
 );
 
 ?>
 
-<section class="container-fluid pv-xs-2 pv-sm-3 pv-lg-4">
+<section class="container pv-xs-2 pv-sm-3 pv-lg-4">
     <div class="wrapper">
 		<div class="row center-xs">
 			<div class="col-xs-12 col-sm-9">
@@ -33,7 +33,7 @@ themedd_page_header(
 
 
 
-<section class="container-fluid">
+<section class="container">
     <div class="wrapper slim add-ons">
 
 		<?php if ( have_posts() ) : ?>
