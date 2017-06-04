@@ -1,17 +1,6 @@
 <?php
 
-/**
- * Remove the site footer on specific pages
- */
-function affwp_theme_remove_footer( $return ) {
 
-	if ( function_exists( 'edd_is_checkout' ) && edd_is_checkout() ) {
-		$return = false;
-	}
-
-	return $return;
-}
-add_filter( 'themedd_footer_widgets_show', 'affwp_theme_remove_footer' );
 
 /**
  * Set the number of widget areas to 3 (default is 4).

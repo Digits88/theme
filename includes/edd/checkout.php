@@ -8,21 +8,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 
 /**
- * Remove header on checkout page
- *
- * @since 1.0.0
- */
-function affwp_theme_remove_header( $return ) {
-
-	if ( edd_is_checkout() ) {
-		$return = false;
-	}
-
-	return $return;
-}
-add_filter( 'themedd_page_header', 'affwp_theme_remove_header' );
-
-/**
  * Replace the discount code at checkout with the word "Discount"
  *
  * @since 1.4.9
@@ -83,31 +68,6 @@ function affwp_theme_empty_cart_redirect() {
 	}
 }
 add_action( 'template_redirect', 'affwp_theme_empty_cart_redirect' );
-
-/**
- * Remove navigation on EDD checkout
- *
- * @since 1.0.0
- */
-function affwp_theme_remove_checkout_navigation() {
-
-	if ( ! ( function_exists( 'themedd_is_edd_active' ) && themedd_is_edd_active() ) ) {
-		return;
-	}
-
-	if ( ! edd_is_checkout() ) {
-		return;
-	}
-
-    // remove the primary navigation
-	remove_action( 'themedd_site_header_main', 'themedd_primary_menu' );
-
-    // remove the mobile menu
-    remove_action( 'themedd_site_header_main', 'themedd_menu_toggle' );
-}
-add_action( 'template_redirect', 'affwp_theme_remove_checkout_navigation' );
-
-
 
 /**
  * Filter the page titles
