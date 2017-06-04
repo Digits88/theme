@@ -118,10 +118,10 @@ function affwp_theme_blog_tweaks() {
 
 	if ( is_singular( 'post' ) ) {
 		//remove the post thumbnail from the default location
-		remove_action( 'themedd_article_start', 'themedd_load_post_thumbnail' );
+		remove_action( 'themedd_article_start', 'themedd_show_post_thumbnail' );
 
 		// remove the post header from the default location
-		remove_action( 'themedd_single_start', 'themedd_load_post_header' );
+	//	remove_action( 'themedd_single_start', 'themedd_load_page_header' );
 	}
 
 }
