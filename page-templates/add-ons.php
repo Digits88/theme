@@ -10,7 +10,7 @@ get_header(); ?>
 <section class="container highlight add-ons pv-xs-1">
 	<div class="wrapper">
 
-		<div class="row">
+		<div class="grid row">
 
 			<?php
 				$categories = get_terms( 'download_category', array(
