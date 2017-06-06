@@ -1,8 +1,6 @@
 <?php
 
-if ( ! defined( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE' ) ) {
-	define( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE', 9 );
-}
+
 
 /**
  * Remove the categories and tags for now. We'll add these at a later date, in a different location
@@ -334,6 +332,10 @@ function affwp_theme_post_link_attributes( $attr ) {
 add_filter( 'next_posts_link_attributes', 'affwp_theme_post_link_attributes' );
 add_filter( 'previous_posts_link_attributes', 'affwp_theme_post_link_attributes' );
 
+if ( ! defined( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE' ) ) {
+	define( 'AFFWP_THEME_BLOG_POSTS_PER_PAGE', 12 );
+}
+
 /**
  * Handle the post offset on the blog page
  *
@@ -353,6 +355,11 @@ function affwp_theme_blog_query_offset( &$query ) {
 
     // Desired offset
     $offset = 1;
+
+	if ( is_home() ) {
+        // Display only 1 post for the original blog archive
+        $query->set( 'posts_per_page', AFFWP_THEME_BLOG_POSTS_PER_PAGE );
+    }
 
     // Get posts per page
     $posts_per_page = AFFWP_THEME_BLOG_POSTS_PER_PAGE;
