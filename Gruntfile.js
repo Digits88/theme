@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			src: ['js/src/**/*.js'],
-			dest: 'js/<%= pkg.name %>.min.js'
+			dest: 'js/<%= pkg.name %>.js'
 		},
 		account: {
 			options: {
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
         },
         js: {
           files: {
-            'js/<%= pkg.name %>.min.js': ['js/<%= pkg.name %>.min.js'],
+            'js/<%= pkg.name %>.min.js': ['js/<%= pkg.name %>.js'],
 			'js/account.min.js': ['js/account.min.js'],
 			'js/animation.min.js': ['js/animation.min.js']
           }
@@ -46,17 +46,21 @@ module.exports = function(grunt) {
 
 
     // LESS CSS
-    less: {
-      style: {
-        options: {
-          compress: true
-        },
-        files: {
-          "style.css": "less/style.less"
-        }
-      }
-    },
-
+	less: {
+		style: {
+			files: {
+				"style.css": "less/style.less",
+			}
+		},
+		minify: {
+			options: {
+				compress: true
+			},
+			files: {
+				"style.min.css": "less/style.less"
+			}
+		}
+	},
 
     svgstore: {
       options: {
@@ -81,25 +85,34 @@ module.exports = function(grunt) {
       }
     },
 
+	// Autoprefixer
+	autoprefixer: {
+		your_target: {
+			files:{
+				'style.css': 'style.css'
+			},
+		},
+	},
 
     // Add banner to style.css
     usebanner: {
        addbanner: {
           options: {
             position: 'top',
-            banner: '/*\nTheme Name: AffiliateWP\n' +
+            banner: '/*\nTheme Name: <%= pkg.title %>\n' +
                     'Template: <%= pkg.parentTheme %>\n' +
-                    'Theme URI: https://affiliatewp.com/\n' +
-                    'Author: Andrew Munro\n' +
-                    'Author URI: https://affiliatewp.com\n' +
-                    'Description: \n' +
+                    'Theme URI: <%= pkg.theme_uri %>\n' +
+                    'Author: <%= pkg.author %>\n' +
+                    'Author URI: <%= pkg.author_uri %>\n' +
+                    'Description: <%= pkg.description %>\n' +
                     'License: GNU General Public License\n' +
                     'License URI: license.txt\n' +
+					'Text Domain: <%= pkg.text_domain %>\n' +
                     '*/',
             linebreak: true
           },
           files: {
-            src: [ 'style.css' ]
+            src: [ 'style.css', 'style.min.css' ]
           }
         }
     },
@@ -119,16 +132,16 @@ module.exports = function(grunt) {
       css: {
         // compile CSS when any .less file is compiled in this theme and also the parent theme
         files: ['less/**/*.less', '../<%= pkg.parentTheme %>/assets/less/**/*.less'],
-        tasks: ['less:style'],
+        tasks: ['less:style', 'less:minify', 'autoprefixer:your_target']
       },
-      // Add banner
-      addbanner: {
-        files: 'style.css',
-         tasks: ['usebanner:addbanner'],
-         options: {
-          spawn: false
-        }
-      },
+	  // Add banner
+	  addbanner: {
+		  files: ['less/**/*.less','style.css', 'style.min.css'],
+		  tasks: ['usebanner:addbanner'],
+		  options: {
+			  spawn: false
+		  }
+	  },
 
     }
   });
@@ -136,5 +149,5 @@ module.exports = function(grunt) {
   // Saves having to declare each dependency
   require( "matchdep" ).filterDev( "grunt-*" ).forEach( grunt.loadNpmTasks );
 
-  grunt.registerTask('default', ['concat', 'uglify', 'less', 'svgstore', 'usebanner' ]);
+  grunt.registerTask('default', ['concat', 'uglify', 'less', 'autoprefixer', 'svgstore', 'usebanner' ]);
 };
