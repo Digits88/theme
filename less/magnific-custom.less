@@ -40,7 +40,6 @@
   .mfp-with-anim {
     opacity: 0;
     transition: all 0.25s cubic-bezier( .31,1.12,.53,1.16 );
-    -webkit-transform: translateY(300px);
     transform: translateY(300px);
   }
 
@@ -53,7 +52,6 @@
   &.mfp-ready {
     .mfp-with-anim {
       opacity: 1;
-      -webkit-transform: translateY(0);
       transform: translateY(0);
     }
 
@@ -66,7 +64,6 @@
   &.mfp-removing {
 
     .mfp-with-anim {
-      -webkit-transform: translateY(300px);
       transform: translateY(300px);
       opacity: 0;
     }
@@ -96,9 +93,6 @@
 .mfp-with-zoom.mfp-bg {
 	opacity: 0;
 	-webkit-backface-visibility: hidden;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
 }
 
@@ -106,7 +100,7 @@
 	color: #98C3D1;
 }
 
-@media only screen and ( min-width: @screen-sm-min ) {
+.media-mixin(@break) when (@break = @screen-sm-min) {
 
 	.popup {
 	  padding: 4rem;
@@ -126,7 +120,8 @@
 
 }
 
-@media only screen and ( min-width: @screen-lg-min ) {
+.media-mixin(@break) when (@break = @screen-lg-min) {
+
 	.mfp-move-from-bottom .mfp-content {
 		padding: 4rem;
 	}

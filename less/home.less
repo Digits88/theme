@@ -77,39 +77,33 @@ foreignobject {
 }
 
 @-webkit-keyframes raise {
-  0% {
-	-webkit-transform: scaleY(0);
-			transform: scaleY(0);
-  }
-  75% {
-	-webkit-transform: scaleY(1.1);
-			transform: scaleY(1.1);
-  }
-  100% {
-	-webkit-transform: scaleY(1);
-			transform: scaleY(1);
-  }
+	0% {
+		transform: scaleY(0);
+	}
+	75% {
+		transform: scaleY(1.1);
+	}
+	100% {
+		transform: scaleY(1);
+	}
 }
 
 @keyframes raise {
 
-  0% {
-	-webkit-transform: scaleY(0.01);
-			transform: scaleY(0.01);
-  }
-  75% {
-	-webkit-transform: scaleY(1.05);
-			transform: scaleY(1.05);
-  }
-  100% {
-	-webkit-transform: scaleY(1);
-			transform: scaleY(1);
-  }
+	0% {
+		transform: scaleY(0.01);
+	}
+	75% {
+		transform: scaleY(1.05);
+	}
+	100% {
+		transform: scaleY(1);
+	}
 }
 
 // fade out the lower graph when hovering over the call to action
 .ct-series-a {
-	.transition ( all 0.5s linear );
+	transition: all 0.5s linear;
 	opacity: 100;
 }
 
@@ -120,15 +114,12 @@ foreignobject {
 .cta .ct-series-b .circle-blip {
 	stroke-width: 15px;
 	fill: @accent-color;
-	-webkit-animation: blip 1s ease-out;
 	animation: blip 1s ease-out;
-
-	-webkit-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
 }
 
 .ct-circle {
-	.transition ( all 0.25s linear );
+	transition: all 0.25s linear;
 }
 
 .home .ct-circle {
@@ -163,7 +154,7 @@ foreignobject {
 
 .ct-chart-line {
 	opacity: 0;
-	.transition ( all 0.5s linear );
+	transition: all 0.5s linear;
 }
 
 .loaded .ct-chart-line {
@@ -196,7 +187,7 @@ foreignobject {
 .hero .button {
 	position: relative;
 	z-index: 1;
-	 -webkit-transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
 }
 
 .home .hero {
@@ -211,8 +202,6 @@ foreignobject {
 	position: absolute;
 	z-index: 10;
 	width: 100%;
-	background: -moz-linear-gradient(top, rgba(237,109,98,1) 50%, rgba(237,109,98,0) 100%);
-	background: -webkit-linear-gradient(top, rgba(237,109,98,1) 50%,rgba(237,109,98,0) 100%);
 	background: linear-gradient(to bottom, rgba(237,109,98,1) 50%,rgba(237,109,98,0) 100%);
 }
 
@@ -237,7 +226,6 @@ foreignobject {
 
 .ct-series-b .circle-blip {
 	border: 3px solid @accent-color;
-	-webkit-border-radius: 100%;
 	border-radius: 100%;
 	height: 30px;
 	width: 30px;
@@ -251,14 +239,11 @@ foreignobject {
 .ct-series-b .circle-blip.animated {
 	stroke-width: 15px;
 	fill: @accent-color;
-	-webkit-animation: blip 1s ease-out;
 	animation: blip 1s ease-out;
-
-	-webkit-animation-iteration-count: 1;
 	animation-iteration-count: 1;
 }
 
-@media only screen and ( min-width: @screen-lg-min ) {
+.media-mixin(@break) when (@break = @screen-lg-min) {
 
 	.graph-line {
 		stroke-dasharray: 1000;
@@ -318,7 +303,7 @@ foreignobject {
 // fade in graphs
 .home #graph {
 	opacity: 0;
-	.transition ( all 0.5s linear );
+	transition: all 0.5s linear;
 }
 
 .loaded.home #graph {

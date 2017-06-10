@@ -116,7 +116,7 @@ ul#third-party-add-ons {
 	margin-top: 2rem;
 }
 
-@media only screen and ( min-width: @screen-sm-min ) {
+.media-mixin(@break) when (@break = @screen-sm-min) {
 
 	.related-add-ons {
 
@@ -127,20 +127,16 @@ ul#third-party-add-ons {
 
 	}
 
-
-
 }
 
-@media only screen and ( min-width: @screen-md-min ) {
+.media-mixin(@break) when (@break = @screen-md-min) {
 
 	.single-download #content {
 		background: @light-grey;
 	}
 
 	.related-add-ons { display: block; }
-}
 
-@media only screen and ( min-width: @screen-md-min ) {
 	.single-download #main {
 		padding: 4rem;
 	}

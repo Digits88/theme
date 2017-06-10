@@ -7,8 +7,6 @@
 	}
 
 	a.has-image {
-		cursor: -webkit-zoom-in;
-		cursor: -moz-zoom-in;
 		cursor: zoom-in;
 		display: block;
 	}
@@ -51,8 +49,6 @@
 	background-position: 0 0;
 	background-repeat: repeat;
 	background-size: auto 50%;
-
-	-webkit-animation: animatedBackground 8s linear 2;
 	animation: animatedBackground 8s linear 2;
 
 	h1 {
@@ -71,32 +67,23 @@
 		background-position: 0 0;
 		background-repeat: repeat;
 		background-size: auto 50%;
-		-webkit-animation: animatedBackground 16s linear 1;
 		animation: animatedBackground 16s linear 1;
 		padding: 6rem;
 	}
 
 	&.can-hover {
-		-webkit-animation-iteration-count: infinite;
 		animation-iteration-count: infinite;
-
-		-webkit-animation-play-state: paused;
 		animation-play-state: paused;
 
 		.page-header {
-			-webkit-animation-iteration-count: infinite;
 			animation-iteration-count: infinite;
-
-			-webkit-animation-play-state: paused;
 			animation-play-state: paused;
 		}
 
 		&:hover {
-			-webkit-animation-play-state: running;
 			animation-play-state: running;
 
 			.page-header {
-				-webkit-animation-play-state: running;
 				animation-play-state: running;
 			}
 		}

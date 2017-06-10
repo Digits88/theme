@@ -62,7 +62,6 @@ section.testimonials {
 		border-radius: 3px;
 		border: 1px solid @border-light-grey;
 		width: 100%;
-		display: -webkit-flex;
 		display: flex;
 		flex-direction: column;
 		position: relative;
@@ -70,12 +69,12 @@ section.testimonials {
 
 	.row > div {
 		padding: 0;
-		display: -webkit-flex;
 		display: flex;
 	}
 }
 
-@media only screen and ( min-width: @screen-sm-min ) {
+.media-mixin(@break) when (@break = @screen-sm-min) {
+	
 	section.testimonials .testimonial {
 		margin: 2rem;
 	}

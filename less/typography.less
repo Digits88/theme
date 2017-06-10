@@ -115,7 +115,7 @@ h4:first-of-type {
 	margin-top: 0;
 }
 
-@media only screen and ( min-width: @screen-sm-min ) {
+.media-mixin(@break) when (@break = @screen-sm-min) {
 
 	.blog .page-header h1,
 	.single-post h1 {

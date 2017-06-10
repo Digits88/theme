@@ -39,9 +39,6 @@
 
 .gform_ajax_spinner {
 	display: inline-block;
-	-moz-animation: edd-icon-spin 2s infinite linear;
-	-o-animation: edd-icon-spin 2s infinite linear;
-	-webkit-animation: edd-icon-spin 2s infinite linear;
 	animation: edd-icon- spin 2s infinite linear;
 }
 
@@ -96,7 +93,7 @@ textarea.small {
 .gform_body input[type="url"],
 .gform_body textarea {
 	border: 2px solid @light-grey;
-	.transition( all 0.1s linear);
+	transition: all 0.1s linear;
 
 }
 
@@ -109,7 +106,6 @@ textarea.small {
 }
 
 .ginput_complex {
-	-webkit-justify-content: space-between;
 	justify-content: space-between;
 }
 
@@ -219,10 +215,9 @@ form.support {
 }
 
 // Small Devices, Tablets
-@media only screen and ( min-width : 768px ) {
+.media-mixin(@break) when (@break = @screen-sm-min) {
 
 	.ginput_complex {
-        display: -webkit-flex;
         display: flex;
 
         span {
