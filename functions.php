@@ -14,8 +14,11 @@ if ( ! defined( 'AFFWP_THEME_VERSION' ) ) {
 
 function themedd_styles() {
 
+	// Suffix.
+	$suffix = defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ? '' : '.min';
+
 	// Theme stylesheet.
-	wp_enqueue_style( 'affwp', get_stylesheet_uri(), array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+	wp_enqueue_style( 'affwp', get_theme_file_uri( 'style' . $suffix . '.css' ), array(), filemtime( get_stylesheet_directory() . '/' . 'style' . $suffix . '.css' ) );
 }
 add_action( 'wp_enqueue_scripts', 'themedd_styles' );
 
@@ -52,6 +55,7 @@ function affwp_theme_setup() {
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'blog.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'animation.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'affiliates.php' );
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'lightbox.php' );
 
 	// EDD functions
 	if ( function_exists( 'themedd_is_edd_active' ) && themedd_is_edd_active() ) {

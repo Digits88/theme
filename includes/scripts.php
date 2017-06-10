@@ -15,9 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function affwp_theme_enqueue_scripts() {
 
-	// in addition to the parent theme's JS we load our own
-	wp_register_script( 'affwp-js', get_stylesheet_directory_uri() . '/js/affiliatewp.min.js', array( 'jquery' ), AFFWP_THEME_VERSION, true );
-	wp_enqueue_script( 'affwp-js' );
+	// Suffix.
+	$suffix = defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ? '' : '.min';
+
+	// In addition to the parent theme's JS we load our own.
+	wp_enqueue_script( 'affwp-js', get_theme_file_uri( '/js/affiliatewp' . $suffix . '.js' ), array( 'jquery' ), AFFWP_THEME_VERSION, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'affwp_theme_enqueue_scripts' );
