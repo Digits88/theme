@@ -9,6 +9,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 */
 
 /**
+ * Add last updated icon
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_download_meta_icon_last_updated() {
+	?>
+
+	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-last-updated.svg'; ?>" width="24" />
+
+	<?php
+}
+add_action( 'edd_download_meta_last_updated', 'affwp_theme_download_meta_icon_last_updated' );
+
+/**
  * Add version icon
  *
  * @since 1.0.0
