@@ -320,7 +320,7 @@ add_filter( 'edd_purchase_link_defaults', 'affwp_theme_edd_purchase_link_default
 function affwp_theme_edd_single_download_buttons() {
 
 	?>
-	<aside>
+	<aside class="widget">
 		<?php
 
 			/**
@@ -356,7 +356,7 @@ function affwp_theme_edd_single_download_buttons() {
 	</aside>
 <?php
 }
-add_action( 'themedd_sidebar_download', 'affwp_theme_edd_single_download_buttons' );
+add_action( 'themedd_sidebar_download_start', 'affwp_theme_edd_single_download_buttons' );
 
 /**
  * Supported integrations button
