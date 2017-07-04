@@ -11,6 +11,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 add_action( 'themedd_site_header_main', 'themedd_primary_menu' );
 
 /**
+ * Add the cart to the primary navigation (defaults to the secondary menu)
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_edd_cart_link_position() {
+	return 'primary_menu';
+}
+add_filter( 'themedd_edd_cart_link_position', 'affwp_theme_edd_cart_link_position' );
+
+/**
  * Hide the cart when on the pricing page
  *
  * @since 1.0.0
@@ -23,17 +33,7 @@ function affwp_theme_nav_cart( $return ) {
 
 	return $return;
 }
-add_filter( 'themedd_show_nav_cart', 'affwp_theme_nav_cart' );
-
-/**
- * Add the cart to the primary navigation (defaults to the secondary menu)
- *
- * @since 1.0.0
- */
-function affwp_theme_edd_cart_link_position() {
-	return 'primary_menu';
-}
-add_filter( 'themedd_edd_cart_link_position', 'affwp_theme_edd_cart_link_position' );
+add_filter( 'themedd_nav_cart', 'affwp_theme_nav_cart' );
 
 /**
  * Add the account menu just before the cart icon
@@ -118,7 +118,7 @@ function affwp_theme_edd_cart_icon() {
 	ob_start();
 ?>
 
-	<div>
+	<div class="navCart-icon">
 		<svg width="32" height="32" id="nav-cart-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
 
@@ -142,11 +142,6 @@ function affwp_theme_edd_cart_icon() {
 		<?php endif; ?>
 		</svg>
 	</div>
-	<?php if ( $cart_items ) : ?>
-		<span class="cart-icon-text">Checkout</span>
-	<?php else : ?>
-		<span class="cart-icon-text">Buy</span>
-		<?php endif; ?>
 
     <?php
 
@@ -159,14 +154,28 @@ function affwp_theme_edd_cart_icon() {
 add_filter( 'themedd_edd_cart_icon', 'affwp_theme_edd_cart_icon' );
 
 /**
+ * Don't show the cart total or the item quantity.
+ */
+function affwp_themedd_edd_display_cart_options( $return ) {
+	return 'none';
+}
+add_filter( 'themedd_edd_display_cart_options', 'affwp_themedd_edd_display_cart_options' );
+
+
+/**
  * Modify the EDD cart link defaults
  *
  * @since 1.0.0
  */
 function affwp_theme_edd_cart_link_defaults( $defaults ) {
 
-	// Remove animate class from cart icon
-	$defaults['classes'] = '';
+	$cart_items = function_exists( 'edd_get_cart_contents' ) ? edd_get_cart_contents() : '';
+
+	if ( $cart_items ) {
+		$defaults['text_before'] = '<span class="cart-icon-text">Checkout</span>';
+	} else {
+		$defaults['text_before'] = '<span class="cart-icon-text">Buy</span>';
+	}
 
 	return $defaults;
 }
