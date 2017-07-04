@@ -9,6 +9,48 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 */
 
 /**
+ * Add version icon
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_download_meta_icon_version() {
+	?>
+
+	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-version.svg'; ?>" width="24" />
+
+	<?php
+}
+add_action( 'edd_download_meta_version', 'affwp_theme_download_meta_icon_version' );
+
+/**
+ * Add release date icon
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_download_meta_icon_released() {
+	?>
+
+	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-released.svg'; ?>" width="24" />
+
+	<?php
+}
+add_action( 'edd_download_meta_release_date', 'affwp_theme_download_meta_icon_released' );
+
+/**
+ * Add documentation icon
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_download_meta_icon_documentation() {
+	?>
+
+	<img src="<?php echo get_stylesheet_directory_uri() . '/images/svgs/download-documentation.svg'; ?>" width="24" />
+
+	<?php
+}
+add_action( 'edd_download_meta_documentation', 'affwp_theme_download_meta_icon_documentation' );
+
+/**
  * Add changelog icon
  *
  * @since 1.0.0
