@@ -67,29 +67,45 @@ a.external {
     position: relative;
 }
 
+// old price
 .pricing .price.old {
-     margin-right: 1rem;
-     color: #999;
-     position: absolute;
-     right: 130%;
-     top: 20%;
+//     margin-right: 1rem;
+     color: @body-text-color;
+	 font-weight: 400;
+//     position: absolute;
+//     right: 130%;
+//     top: 20%;
 }
 
 .pricing .price.old,
-.pricing .price.old .currency {
+.pricing .price.old .currency,
+.pricing .price.old sup:first-child {
     font-size: 50%;
 }
 
 .pricing .price.old .currency {
     top: 3px;
 }
+// End old price
 
-.pricing .currency {
+// .pricing .currency {
+//     font-size: 2rem;
+//     position: absolute;
+//     top: 4px;
+//     right: 105%;
+// }
+
+.pricing sup:first-child {
     font-size: 2rem;
-    position: absolute;
-    top: 4px;
-    right: 105%;
 }
+
+.pricing sup {
+    font-size: 1.5rem;
+}
+
+// .pricing sup:last-child {
+//     vertical-align: middle;
+// }
 
 .pricing .button {
 	text-transform: uppercase;

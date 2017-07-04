@@ -2,9 +2,7 @@
     color: #fff;
 }
 
-.site-header-menu .main-navigation {
-	padding: 0;
-}
+
 
 .site-header-wrap {
     flex-wrap: wrap;
@@ -42,8 +40,17 @@ ul.menu > li.nav-action:hover > a {
 }
 
 // checkout/buy button
-li.menu-item.checkout a {
+li.menu-item.checkout a,
+li.menu-item.checkout a:focus {
     color: #fff;
+}
+
+.site-header-menu .navCart {
+    padding: 1rem;
+}
+
+.navCart-icon + * {
+	margin-left: 0;
 }
 
 // svgs
@@ -139,17 +146,17 @@ g.icon rect {
 
 	    // purchase/checkout menu item
 	    li.menu-item.nav-action {
-	        margin-left: 1rem;
+	    //    margin-left: 1rem;
 	    }
 
-	    li.menu-item.nav-action a {
-	        padding-top: 3rem;
-	    }
+	    // li.menu-item.nav-action a {
+	    //     padding-top: 3rem;
+	    // }
 
 	    li.menu-item.nav-action svg {
 	        opacity: 1;
-
 	    }
+
 	    // hover effect for icons
 	    li.menu-item:hover div svg {
 	        bottom: 0.5rem;
@@ -159,7 +166,6 @@ g.icon rect {
 	    li.menu-item.checkout div svg {
 	        bottom: 0.5rem;
 	    }
-
 
 	    li.menu-item.current-menu-ancestor svg,
 	    li.menu-item.current-menu-item svg {
@@ -175,6 +181,10 @@ g.icon rect {
 
 	li.menu-item.nav-action a {
 		background: @accent-color;
+	}
+
+	.site-header-menu .main-navigation {
+		padding: 0;
 	}
 
 }
