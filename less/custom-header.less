@@ -18,7 +18,7 @@
 }
 
 // show desktop nav
-@media only screen and ( min-width: @desktop-nav ) {
+.media-mixin(@break) when (@break = @desktop-nav) {
 
     // remove the "real" main navigation that exists below the logo
     // we added our new nav so it appears next to the logo, where the secondary navigation used to be

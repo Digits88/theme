@@ -3918,6 +3918,12 @@ label[for*="rcp_discount_code"] {
   section.testimonials .testimonial {
     margin: 2rem;
   }
+  .site-header-wrap + .site-header-menu {
+    display: none;
+  }
+  .main-navigation .primary-menu {
+    margin-right: 0;
+  }
   .site-footer {
     padding-top: 4rem;
   }
@@ -6635,14 +6641,6 @@ section.feature-highlights {
     stroke: #fff;
   }
 }
-@media only screen and (min-width: 768px) {
-  .site-header-wrap + .site-header-menu {
-    display: none;
-  }
-  .main-navigation .primary-menu {
-    margin-right: 0;
-  }
-}
 .box.highlight h4:first-of-type,
 .signup h4:first-of-type {
   text-align: center;
@@ -8965,6 +8963,12 @@ g.icon rect {
   }
   section.testimonials .testimonial {
     margin: 2rem;
+  }
+  .site-header-wrap + .site-header-menu {
+    display: none;
+  }
+  .main-navigation .primary-menu {
+    margin-right: 0;
   }
   .site-footer {
     padding-top: 4rem;
