@@ -1,6 +1,11 @@
 <?php
 
-
+/**
+ * Remove themedd_posted_on()
+ *
+ * @since 1.5.2
+ */
+remove_action( 'themedd_page_header_wrapper_start', 'themedd_show_posted_on' );
 
 /**
  * Remove the categories and tags for now. We'll add these at a later date, in a different location
