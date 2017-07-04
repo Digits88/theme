@@ -380,7 +380,116 @@ function affwp_theme_pro_add_ons_value() {
 	return 60 * affwp_theme_get_add_on_count( 'pro' );
 }
 
+/**
+ * Get a price for a specific pricing option.
+ *
+ * @since 1.5.2
+ */
+function affwp_theme_get_price( $pricing_option = '' ) {
 
+	// Return early if no pricing option specified.
+	if ( empty( $pricing_option ) ) {
+		return;
+	}
+
+	switch ( $pricing_option ) {
+
+		case 'ultimate':
+			$price = 499;
+			break;
+
+		case 'professional':
+			$price = 249;
+			break;
+
+		case 'plus':
+			$price = 149;
+			break;
+
+		case 'personal':
+			$price = 99;
+			break;
+	}
+
+	return $price;
+
+}
+
+/**
+ * Get the sale price for a specific pricing option.
+ *
+ * @since 1.5.2
+ */
+function affwp_theme_get_sale_price( $pricing_option = '' ) {
+
+	// Determine if there is a current sale.
+	$current_sale_discount_id = function_exists( 'affwpcf_is_current_sale' ) ? affwpcf_is_current_sale() : false;
+
+	// Return early if there's no sale or no pricing option specified.
+	if ( ! $current_sale_discount_id || empty( $pricing_option ) ) {
+		return;
+	}
+
+	// Get the discount object.
+	$discount = edd_get_discount( $current_sale_discount_id );
+
+	// Get the sale amount.
+	$sale_amount = $discount->amount;
+
+	// Determine the sale price.
+	$sale_price = affwp_theme_get_price( $pricing_option ) - affwp_theme_get_price( $pricing_option ) / 100 * $sale_amount;
+
+	return $sale_price;
+
+}
+
+/**
+ * Show the price
+ *
+ * @since 1.5.2
+ */
+function affwp_theme_show_price( $pricing_option = '' ) {
+
+	// Return early if no pricing option specified.
+	if ( empty( $pricing_option ) ) {
+		return;
+	}
+
+	// Determine if there is a current sale.
+	$current_sale_discount_id = function_exists( 'affwpcf_is_current_sale' ) ? affwpcf_is_current_sale() : false;
+
+	// Get the normal price.
+	$price = affwp_theme_get_price( $pricing_option );
+
+	// Get the sale price.
+	$sale_price = affwp_theme_get_sale_price( $pricing_option );
+	$sale_price = number_format( $sale_price, 2, '.', '' );
+	$sale_price = preg_replace('/\.([0-9]*)/', '<sup>.$1</sup>', $sale_price );
+
+	?>
+
+	<?php if ( $current_sale_discount_id ) : ?>
+
+		<?php
+		/**
+		 * There's a sale, show the old price (crossed out) and the new sale price.
+		 */
+		?>
+		<span class="price old"><sup>$</sup><s><?php echo $price; ?></s></span><span class="price"><sup>$</sup><?php echo $sale_price; ?></span>
+	<?php else : ?>
+
+		<?php
+		/**
+		 * No sale, show the usual price.
+		 */
+		?>
+		<span class="price"><sup>$</sup><?php echo $price; ?></span>
+
+	<?php endif; ?>
+
+	<?php
+
+}
 
 /**
  * Pricing table
@@ -425,8 +534,9 @@ function affwp_theme_pricing_table() {
                         <h2>Ultimate</h2>
 
                         <ul class="mb-xs-2">
-                            <li class="pricing">
-								<span class="price"><span class="currency">$</span>499</span>
+
+							<li class="pricing">
+								<?php echo affwp_theme_show_price( 'ultimate' ); ?>
 								<span class="length">one-time payment</span>
 							</li>
 							<li class="feature price">
@@ -439,7 +549,6 @@ function affwp_theme_pricing_table() {
                             <li class="feature"><strong>Lifetime email support</strong></li>
 							<li class="feature"><strong>Unlimited sites</strong></li>
 							<li class="feature">All core features included</li>
-
 
                         </ul>
 
@@ -485,10 +594,8 @@ function affwp_theme_pricing_table() {
 
 	                        <ul class="mb-xs-2">
 	                            <li class="pricing">
-
-									<span class="price">
-										<span class="currency">$</span>249</span>
-										<span class="length">per year</span>
+									<?php echo affwp_theme_show_price( 'professional' ); ?>
+									<span class="length">per year</span>
 								</li>
 
 								<li class="feature price">
@@ -533,7 +640,7 @@ function affwp_theme_pricing_table() {
 	                        <ul class="mb-xs-2">
 
 								<li class="pricing">
-									<span class="price"><span class="currency">$</span>149</span>
+									<?php echo affwp_theme_show_price( 'plus' ); ?>
 									<span class="length">per year</span>
 								</li>
 								<li class="feature"><strong><a href="#modal-offical-free-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $count_official_free_add_ons; ?> official free add-ons</a></strong></li>
@@ -574,7 +681,7 @@ function affwp_theme_pricing_table() {
 	                        <ul class="mb-xs-2">
 
 								<li class="pricing">
-									<span class="price"><span class="currency">$</span>99</span>
+									<?php echo affwp_theme_show_price( 'personal' ); ?>
 									<span class="length">per year</span>
 								</li>
 
