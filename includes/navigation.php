@@ -41,10 +41,15 @@ add_filter( 'themedd_nav_cart', 'affwp_theme_nav_cart' );
  * @since 1.0.0
  * @uses affwp_theme_nav_account()
  */
-function affwp_account_menu( $items ) {
-    return $items . affwp_theme_nav_account();
+function affwp_account_menu( $items, $args ) {
+
+	if ( 'primary-menu' === $args->menu_id ) {
+		return $items . affwp_theme_nav_account();
+	}
+
+    return $items;
 }
-add_filter( 'themedd_wp_nav_menu_items', 'affwp_account_menu' );
+add_filter( 'themedd_wp_nav_menu_items', 'affwp_account_menu', 10, 2 );
 
 /**
  * Append account to main navigation
