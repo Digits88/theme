@@ -1279,8 +1279,7 @@ ol {
 }
 li > ul,
 li > ol {
-  margin-top: 1.62rem;
-  margin-bottom: 1.62rem;
+  margin-bottom: 0;
 }
 table,
 th,
@@ -1435,6 +1434,7 @@ article[class^="post-"] + article[class^="post-"] {
 }
 #respond {
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .comment-reply-link,
 #cancel-comment-reply-link,
@@ -1444,7 +1444,7 @@ article[class^="post-"] + article[class^="post-"] {
 #cancel-comment-reply-link {
   float: right;
 }
-.children {
+.comments-area .children {
   margin-top: 2rem;
 }
 /**
@@ -1561,8 +1561,8 @@ fieldset {
   padding: 0;
   position: relative;
 }
-fieldset:last-child,
-fieldset p:last-child {
+#edd_purchase_form_wrap > fieldset:last-child,
+#edd_purchase_form_wrap > fieldset p:last-child {
   margin-bottom: 0 !important;
 }
 legend {
@@ -1987,7 +1987,6 @@ section.account .wrapper {
   max-width: 1188px;
 }
 .account-nav {
-  margin-bottom: 1rem;
   padding-left: 0;
 }
 .account-content {
@@ -2002,12 +2001,11 @@ section.account .wrapper {
 }
 .account-nav ul li {
   position: relative;
-  display: inline-block;
+  display: block;
   margin-bottom: 0;
 }
 .account-nav ul a {
-  display: inline-block;
-  margin-right: 0.5rem;
+  display: block;
   font-size: 1rem;
   color: #222;
 }
@@ -2180,7 +2178,7 @@ button:focus {
 }
 #mobile-menu .menu-item-has-children > a {
   margin: 0;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 #mobile-menu .sub-menu a {
   padding-left: 2rem;
@@ -2191,13 +2189,13 @@ button:focus {
   border-radius: 0;
   color: #717f86;
   content: "";
+  width: 48px;
   height: 48px;
   padding: 0;
   position: absolute;
   text-transform: none;
   top: 0;
   right: 0;
-  width: 78px;
 }
 .dropdown-toggle:hover {
   background-color: transparent;
@@ -2454,6 +2452,7 @@ span.edd_price {
   margin: auto 0 0 0;
 }
 .edd_pagination,
+.edd-review-navigation,
 .edd-reviews-vendor-feedback-pagination,
 #edd_user_commissions .navigation,
 #edd_download_pagination,
@@ -2472,6 +2471,7 @@ span.edd_price {
   color: #717f86;
 }
 .edd_pagination .current,
+.edd-review-navigation .current,
 .edd-reviews-vendor-feedback-pagination .current,
 #edd_user_commissions .navigation .current,
 #edd_download_pagination .current,
@@ -2479,6 +2479,7 @@ span.edd_price {
 .fes-pagination .current,
 .fes-product-list-pagination-container .current,
 .edd_pagination a.page-numbers,
+.edd-review-navigation a.page-numbers,
 .edd-reviews-vendor-feedback-pagination a.page-numbers,
 #edd_user_commissions .navigation a.page-numbers,
 #edd_download_pagination a.page-numbers,
@@ -2490,6 +2491,7 @@ span.edd_price {
   border: 1px solid #f4f7f8;
 }
 .edd_pagination .current,
+.edd-review-navigation .current,
 .edd-reviews-vendor-feedback-pagination .current,
 #edd_user_commissions .navigation .current,
 #edd_download_pagination .current,
@@ -2497,6 +2499,7 @@ span.edd_price {
 .fes-pagination .current,
 .fes-product-list-pagination-container .current,
 .edd_pagination a.page-numbers,
+.edd-review-navigation a.page-numbers,
 .edd-reviews-vendor-feedback-pagination a.page-numbers,
 #edd_user_commissions .navigation a.page-numbers,
 #edd_download_pagination a.page-numbers,
@@ -2504,6 +2507,7 @@ span.edd_price {
 .fes-pagination a.page-numbers,
 .fes-product-list-pagination-container a.page-numbers,
 .edd_pagination .dots,
+.edd-review-navigation .dots,
 .edd-reviews-vendor-feedback-pagination .dots,
 #edd_user_commissions .navigation .dots,
 #edd_download_pagination .dots,
@@ -2514,6 +2518,7 @@ span.edd_price {
   margin-right: 0.5rem;
 }
 .edd_pagination .current,
+.edd-review-navigation .current,
 .edd-reviews-vendor-feedback-pagination .current,
 #edd_user_commissions .navigation .current,
 #edd_download_pagination .current,
@@ -2521,6 +2526,7 @@ span.edd_price {
 .fes-pagination .current,
 .fes-product-list-pagination-container .current,
 .edd_pagination a.page-numbers:hover,
+.edd-review-navigation a.page-numbers:hover,
 .edd-reviews-vendor-feedback-pagination a.page-numbers:hover,
 #edd_user_commissions .navigation a.page-numbers:hover,
 #edd_download_pagination a.page-numbers:hover,
@@ -2683,6 +2689,8 @@ span.padlock {
 #edd_purchase_form #edd_cc_address,
 #edd_cc_fields,
 #edd_terms_agreement,
+#edd_simple_shipping_fields,
+#edd_simple_shipping_diff_address,
 #edd-stripe-manage-cards > fieldset,
 #edd_payment_mode_select {
   padding: 1rem;
@@ -2701,12 +2709,20 @@ span.padlock {
 #edd_purchase_form #edd_cc_address p:last-child,
 #edd_cc_fields p:last-child,
 #edd_terms_agreement p:last-child,
+#edd_simple_shipping_fields p:last-child,
+#edd_simple_shipping_diff_address p:last-child,
 #edd-stripe-manage-cards > fieldset p:last-child,
 #edd_payment_mode_select p:last-child {
   margin-bottom: 0.5rem;
 }
+#edd_simple_shipping_diff_address label {
+  margin-bottom: 0;
+}
 #edd_purchase_form_wrap select {
   width: 100%;
+}
+#edd_purchase_form_wrap .edd-select-small {
+  width: auto;
 }
 #edd_show_terms + .edd-terms-agreement {
   margin-top: 0.5rem;
@@ -3047,10 +3063,6 @@ input[readonly] {
 #edd_commissions_export select {
   vertical-align: middle;
 }
-#edd_user_commissions .button {
-  font-size: 0.875rem;
-  padding: 0.25rem 0.75rem;
-}
 .edd-stripe-submit-update {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -3165,6 +3177,13 @@ a.delete {
   width: 4rem;
   margin-bottom: 0.5rem;
 }
+.edd-select {
+  vertical-align: middle;
+}
+.edd-select ~ .button {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+}
 /* Restrict Content Pro */
 #rcp_subscription_levels {
   list-style-type: none;
@@ -3234,6 +3253,10 @@ label[for*="rcp_discount_code"] {
 }
 /* Media queries */
 @media only screen and (max-width: 991px) {
+  .account-nav ul {
+    line-height: 2;
+    margin-bottom: 2rem;
+  }
   .no-js .main-navigation ul ul {
     display: block;
   }
@@ -3668,6 +3691,10 @@ label[for*="rcp_discount_code"] {
   .mb-sm-12 {
     margin-bottom: 12rem;
   }
+  .account-nav ul li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
   .main-navigation .primary-menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3878,6 +3905,8 @@ label[for*="rcp_discount_code"] {
   #edd_cc_fields,
   #edd_terms_agreement,
   #edd-stripe-manage-cards > fieldset,
+  #edd_simple_shipping_fields,
+  #edd_simple_shipping_diff_address,
   #edd_payment_mode_select {
     padding: 2rem;
   }
@@ -4336,7 +4365,6 @@ label[for*="rcp_discount_code"] {
     margin-bottom: 0;
   }
   .account-nav ul a {
-    display: block;
     padding: 1rem 2rem;
     margin: 0;
   }
@@ -4348,6 +4376,7 @@ label[for*="rcp_discount_code"] {
     border: 2px solid #f4f4f4;
     border-right: none;
     border-bottom: none;
+    margin-right: 0;
   }
   .account-nav ul li {
     display: block;
@@ -4371,7 +4400,7 @@ label[for*="rcp_discount_code"] {
     height: 40000px;
     z-index: 1;
   }
-  .single-download .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js,
+  .single-download a.edd-add-to-cart.edd-has-js,
   .single-download .edd_go_to_checkout {
     width: 100%;
   }
@@ -7889,9 +7918,9 @@ section.used-by:hover .slick-initialized + .slick-used-by-nav {
       flex-wrap: wrap;
 }
 .hero .main-navigation li a,
-.hero .main-navigation li:hover a,
-.hero .main-navigation li:focus a,
-.hero .main-navigation li:active a {
+.hero .main-navigation li a:hover,
+.hero .main-navigation li a:focus,
+.hero .main-navigation li a:active {
   color: #fff;
 }
 .hero .dropdown-toggle {
@@ -8280,6 +8309,10 @@ g.icon rect {
 }
 /* Media queries */
 @media only screen and (max-width: 991px) {
+  .account-nav ul {
+    line-height: 2;
+    margin-bottom: 2rem;
+  }
   .no-js .main-navigation ul ul {
     display: block;
   }
@@ -8714,6 +8747,10 @@ g.icon rect {
   .mb-sm-12 {
     margin-bottom: 12rem;
   }
+  .account-nav ul li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
   .main-navigation .primary-menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8924,6 +8961,8 @@ g.icon rect {
   #edd_cc_fields,
   #edd_terms_agreement,
   #edd-stripe-manage-cards > fieldset,
+  #edd_simple_shipping_fields,
+  #edd_simple_shipping_diff_address,
   #edd_payment_mode_select {
     padding: 2rem;
   }
@@ -9382,7 +9421,6 @@ g.icon rect {
     margin-bottom: 0;
   }
   .account-nav ul a {
-    display: block;
     padding: 1rem 2rem;
     margin: 0;
   }
@@ -9394,6 +9432,7 @@ g.icon rect {
     border: 2px solid #f4f4f4;
     border-right: none;
     border-bottom: none;
+    margin-right: 0;
   }
   .account-nav ul li {
     display: block;
@@ -9417,7 +9456,7 @@ g.icon rect {
     height: 40000px;
     z-index: 1;
   }
-  .single-download .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js,
+  .single-download a.edd-add-to-cart.edd-has-js,
   .single-download .edd_go_to_checkout {
     width: 100%;
   }
