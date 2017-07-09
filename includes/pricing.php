@@ -506,7 +506,7 @@ function affwp_theme_pricing_table() {
 
 ?>
 
-	<section class="container pricing-table" id="pricing">
+	<section class="pricing-table" id="pricing">
 
 			<?php
 

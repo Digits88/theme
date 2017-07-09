@@ -1594,8 +1594,8 @@ form ul {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 .row {
   box-sizing: border-box;
@@ -1611,8 +1611,8 @@ form ul {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-right: -2rem;
-  margin-left: -2rem;
+  margin-right: -1rem;
+  margin-left: -1rem;
 }
 .row.reverse {
   -webkit-box-orient: horizontal;
@@ -3277,7 +3277,7 @@ label[for*="rcp_discount_code"] {
     text-align: center;
   }
   .site-branding {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
   .edd_discount_link {
     display: block;
@@ -3344,16 +3344,13 @@ label[for*="rcp_discount_code"] {
     font-size: 1.4rem;
   }
   .footer-widgets .widget-column {
-    padding: 1rem 2rem;
+    padding: 2rem;
   }
   .site-footer ul {
     margin-bottom: 0;
   }
   .footer-widgets .widget {
     margin-bottom: 4rem;
-  }
-  .footer-widgets .widget-column {
-    padding: 2rem;
   }
   .author-avatar {
     float: left;
@@ -3374,6 +3371,14 @@ label[for*="rcp_discount_code"] {
   }
   .gallery.gallery-columns-4 .gallery-item {
     width: 25%;
+  }
+  .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  .row {
+    margin-right: -2rem;
+    margin-left: -2rem;
   }
   .col-sm,
   .col-sm-1,
@@ -8333,7 +8338,7 @@ g.icon rect {
     text-align: center;
   }
   .site-branding {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
   .edd_discount_link {
     display: block;
@@ -8400,16 +8405,13 @@ g.icon rect {
     font-size: 1.4rem;
   }
   .footer-widgets .widget-column {
-    padding: 1rem 2rem;
+    padding: 2rem;
   }
   .site-footer ul {
     margin-bottom: 0;
   }
   .footer-widgets .widget {
     margin-bottom: 4rem;
-  }
-  .footer-widgets .widget-column {
-    padding: 2rem;
   }
   .author-avatar {
     float: left;
@@ -8430,6 +8432,14 @@ g.icon rect {
   }
   .gallery.gallery-columns-4 .gallery-item {
     width: 25%;
+  }
+  .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  .row {
+    margin-right: -2rem;
+    margin-left: -2rem;
   }
   .col-sm,
   .col-sm-1,

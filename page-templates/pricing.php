@@ -15,7 +15,7 @@ get_header(); ?>
 	);
 ?>
 
-<section class="mb-xs-2 mb-lg-4">
+<section class="mb-xs-2 mb-lg-4 container">
 	<div class="wrapper wide">
 		<?php affwp_theme_pricing_table(); ?>
 	</div>
