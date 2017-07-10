@@ -52,6 +52,7 @@ function affwp_theme_animation_post_titles() {
 	$post_titles = array(
 		'Introducing the REST API Extended add-on',
 		'REST API Extended',
+		'CSV import tools, payout reports, and more with version 2.1',
 		'Version 2.0 released!',
 		'Version 1.9 released!',
 		'Version 1.8 released!',
@@ -110,6 +111,7 @@ function affwp_theme_animation_get_image( $post_id = 0, $type = 'img' ) {
 		case 'Version 2.0 released!':
 		case 'Version 1.9 released!':
 		case 'Version 1.8 released!':
+		case 'CSV import tools, payout reports, and more with version 2.1':
 			$image = 'product-update';
 			break;
 
@@ -364,7 +366,8 @@ function affwp_theme_animation_product_update() {
 	if ( ! (
 		'Version 2.0 released!' === $post->post_title ||
 		'Version 1.9 released!' === $post->post_title ||
-		'Version 1.8 released!' === $post->post_title
+		'Version 1.8 released!' === $post->post_title ||
+		'CSV import tools, payout reports, and more with version 2.1' === $post->post_title
 		)
 	) {
 		return;
