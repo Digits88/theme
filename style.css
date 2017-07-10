@@ -1594,8 +1594,8 @@ form ul {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 .row {
   box-sizing: border-box;
@@ -1611,8 +1611,8 @@ form ul {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-right: -1rem;
-  margin-left: -1rem;
+  margin-right: -2rem;
+  margin-left: -2rem;
 }
 .row.reverse {
   -webkit-box-orient: horizontal;
@@ -1643,8 +1643,8 @@ form ul {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 .col-xs {
   -webkit-box-flex: 1;
@@ -3273,6 +3273,30 @@ label[for*="rcp_discount_code"] {
   }
 }
 @media only screen and (max-width: 767px) {
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .row {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+  .col-xs,
+  .col-xs-1,
+  .col-xs-2,
+  .col-xs-3,
+  .col-xs-4,
+  .col-xs-5,
+  .col-xs-6,
+  .col-xs-7,
+  .col-xs-8,
+  .col-xs-9,
+  .col-xs-10,
+  .col-xs-11,
+  .col-xs-12 {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
   .site-title {
     text-align: center;
   }
@@ -3371,14 +3395,6 @@ label[for*="rcp_discount_code"] {
   }
   .gallery.gallery-columns-4 .gallery-item {
     width: 25%;
-  }
-  .container {
-    padding-right: 2rem;
-    padding-left: 2rem;
-  }
-  .row {
-    margin-right: -2rem;
-    margin-left: -2rem;
   }
   .col-sm,
   .col-sm-1,
@@ -8334,6 +8350,30 @@ g.icon rect {
   }
 }
 @media only screen and (max-width: 767px) {
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .row {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+  .col-xs,
+  .col-xs-1,
+  .col-xs-2,
+  .col-xs-3,
+  .col-xs-4,
+  .col-xs-5,
+  .col-xs-6,
+  .col-xs-7,
+  .col-xs-8,
+  .col-xs-9,
+  .col-xs-10,
+  .col-xs-11,
+  .col-xs-12 {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
   .site-title {
     text-align: center;
   }
@@ -8432,14 +8472,6 @@ g.icon rect {
   }
   .gallery.gallery-columns-4 .gallery-item {
     width: 25%;
-  }
-  .container {
-    padding-right: 2rem;
-    padding-left: 2rem;
-  }
-  .row {
-    margin-right: -2rem;
-    margin-left: -2rem;
   }
   .col-sm,
   .col-sm-1,
