@@ -17,12 +17,15 @@ $color = ( $color == 'inherit' ) ? '' : $color;
 $sites = edd_software_licensing()->get_sites( $license_id );
 ?>
 
+<p><a href="<?php echo site_url( 'account' ); ?>" class="edd-manage-license-back edd-submit button"><?php _e( 'Go back', 'edd_sl' ); ?></a></p>
+
+<?php /*
 <?php if ( is_page('account') ) : ?>
 <p><a href="<?php echo site_url( 'account' ); ?>" class="edd-manage-license-back edd-submit button"><?php _e( 'Go back', 'edd_sl' ); ?></a></p>
 <?php else : ?>
 <p><a href="<?php echo esc_url( remove_query_arg( array( 'license_id', 'edd_sl_error', '_wpnonce' ) ) ); ?>" class="edd-manage-license-back edd-submit button <?php echo esc_attr( $color ); ?>"><?php _e( 'Go back', 'edd_sl' ); ?></a></p>
 <?php endif; ?>
-
+*/ ?>
 
 
 <?php edd_sl_show_errors(); ?>
