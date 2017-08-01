@@ -227,7 +227,7 @@ function affwp_theme_modal_content_pricing_calculator() {
 	</script>
 	<?php
 }
-add_action( 'wp_footer', 'affwp_theme_modal_content_pricing_calculator' );
+//add_action( 'wp_footer', 'affwp_theme_modal_content_pricing_calculator' );
 
 /**
  * Allows the customer to send themself an email with the result
@@ -246,7 +246,7 @@ function affwp_theme_send_email() {
 	wp_mail( $email, 'AffiliateWP price calculation', $message );
 
 }
-add_action( 'template_redirect', 'affwp_theme_send_email' );
+//add_action( 'template_redirect', 'affwp_theme_send_email' );
 
 /**
  * Include specific pages that should have the call to action
