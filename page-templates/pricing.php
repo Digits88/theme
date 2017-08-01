@@ -21,7 +21,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<?php affwp_theme_pricing_calculator(); ?>
+<?php //affwp_theme_pricing_calculator(); ?>
 
 <?php
 /**
