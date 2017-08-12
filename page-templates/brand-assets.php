@@ -55,11 +55,11 @@ themedd_page_header(
 		        </div>
 
 				<div class="col-xs-12 col-sm-6 col-lg-4 color color-4">
-					<div class="bottom-xs"><p>#2d2d2d</p></div>
+					<div class="bottom-xs"><p>#f4f7f8</p></div>
 		        </div>
 
 				<div class="col-xs-12 col-sm-6 col-lg-4 color color-5">
-					<div class="bottom-xs"><p>#f4f7f8</p></div>
+					<div class="bottom-xs"><p>#2d2d2d</p></div>
 		        </div>
 
 				<div class="col-xs-12 col-sm-6 col-lg-4 color color-6">
