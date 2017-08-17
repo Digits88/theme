@@ -40,6 +40,7 @@ function affwp_theme_setup() {
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'account.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'changelog.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'home.php' );
+	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'custom.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'gravity-forms.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'integrations.php' );
 	require_once( trailingslashit( AFFWP_THEME_INCLUDES_DIR ) . 'scripts.php' );
