@@ -159,7 +159,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 <div class="row center-xs">
 	<div class="col-xs-12 col-sm-8">
 
-		<a href="#pricing" class="scroll button large">Ready to increase sales?</a>
+		<a href="#pricing" class="scroll button button-large">Ready to increase sales?</a>
 	</div>
 </div>
 </section>
