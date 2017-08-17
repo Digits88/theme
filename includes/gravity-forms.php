@@ -98,7 +98,6 @@ function affwp_theme_get_signup() {
 
 }
 
-
 /**
  * Gravity Forms - remove validation message
  *
