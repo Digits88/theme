@@ -48,7 +48,7 @@ if ( $query->have_posts() ) : ?>
 
 					<?php endif; ?>
 
-					<span class="button large outline white">Read now</span>
+					<span class="button button-large outline white">Read now</span>
 				</div>
 			</a>
 		</header>

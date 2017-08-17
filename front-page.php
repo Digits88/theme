@@ -245,7 +245,7 @@ if ( $query->have_posts() ) : ?>
 <?php if ( $gallery ) : ?>
 <section class="container pv-xs-2 pv-lg-4 screenshots center-xs">
 	<div class="wrapper">
-		<a href="<?php echo site_url( 'screenshots'); ?>" class="button large outline secondary">See all <?php echo affwp_theme_screenshot_count(); ?> screenshots</a>
+		<a href="<?php echo site_url( 'screenshots'); ?>" class="button button-large outline secondary">See all <?php echo affwp_theme_screenshot_count(); ?> screenshots</a>
     </div>
 </section>
 <?php endif; ?>

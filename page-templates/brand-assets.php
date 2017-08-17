@@ -204,7 +204,7 @@ themedd_page_header(
 	</div>
 
 	<div class="wrapper center-xs">
-		<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/logos.zip'; ?>" target="_blank" class="button large">Download logos</a>
+		<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/logos.zip'; ?>" target="_blank" class="button button-large">Download logos</a>
 	</div>
 
 </section>
@@ -439,7 +439,7 @@ themedd_page_header(
 
 <section class="container center-xs brand-assets pv-xs-2 pv-md-4 ">
 	<div class="wrapper">
-		<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/alf.zip'; ?>" target="_blank" class="button large">Download Alf</a>
+		<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/alf.zip'; ?>" target="_blank" class="button button-large">Download Alf</a>
 	</div>
 </section>
 
@@ -455,7 +455,7 @@ themedd_page_header(
 		<div class="col-xs-12 col-sm-6">
 			<h1>Screenshots</h1>
 			<p class="mb-xs-4">We currently have <?php echo affwp_theme_screenshot_count(); ?> screenshots of the Affiliate Dashboard and WordPress admin area. You can either <a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/screenshots.zip'; ?>">download this zip file</a> or <a href="<?php echo site_url( 'screenshots' );?>">view and download</a> the screenshots individually.</p>
-			<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/screenshots.zip'; ?>" target="_blank" class="button large">Download screenshots</a>
+			<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/screenshots.zip'; ?>" target="_blank" class="button button-large">Download screenshots</a>
 		</div>
 	</div>
 
