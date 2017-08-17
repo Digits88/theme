@@ -4,6 +4,19 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+ * EDD Recurring
+ * Modify URL to update payment method
+ *
+ * @since 1.0.0
+ */
+function themedd_edd_recurring_update_url( $url, $subscription ) {
+	$url = add_query_arg( array( 'action' => 'update', 'subscription_id' => $subscription->id ), '#tabs=1' );
+
+	return $url;
+}
+add_filter( 'edd_subscription_update_url', 'themedd_edd_recurring_update_url', 10, 2 );
+
+/**
  * Remove sidebar download info
  */
 remove_action( 'themedd_sidebar_download', 'themedd_edd_download_info' );
@@ -334,7 +347,7 @@ function affwp_theme_edd_single_download_buttons() {
 			if ( $has_ultimate_license || $has_professional_license ) : ?>
 				<a href="<?php echo affwp_theme_get_add_on_download_url( get_the_ID() ); ?>" class="button download">Download Now</a>
 			<?php else :  ?>
-				<a href="#no-access" class="button wide popup-content download" data-effect="mfp-move-from-bottom">Download Now</a>
+				<a href="#no-access" class="button popup-content download" data-effect="mfp-move-from-bottom">Download Now</a>
 				<?php affwp_theme_upgrade_or_purchase_modal();
 			endif;
 
@@ -374,7 +387,7 @@ function affwp_theme_edd_download_integrations() {
 	}
 
 	?>
-	<a id="button-supported-integrations" href="#supported-integrations" class="button wide outline secondary popup-content" data-effect="mfp-move-from-bottom">View compatible integrations</a>
+	<a id="button-supported-integrations" href="#supported-integrations" class="button outline secondary popup-content" data-effect="mfp-move-from-bottom">View compatible integrations</a>
 	<?php affwp_theme_add_on_supported_integrations_modal(); ?>
 <?php
 }
@@ -446,7 +459,7 @@ function affwp_theme_add_on_supported_integrations_modal() {
 
 
 /**
- * Prevent pro or free addons from being added to cart with ?edd_action=add_to_cart&download_id=XXX
+ * Prevent pro or free add-ons from being added to cart with ?edd_action=add_to_cart&download_id=XXX
  *
  * @param int $download_id Download Post ID
  * @since 1.0.0
