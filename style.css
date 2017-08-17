@@ -4644,10 +4644,6 @@ a.external .icon-external {
 .in-cart .table-option {
   border: 4px solid #e34f43;
 }
-body.single-post #content .content-wrapper,
-body.single-post #content .wrapper {
-  max-width: 848px;
-}
 body.blog .page-header .wrapper,
 body.single-post #content .page-header .wrapper {
   max-width: 980px;
