@@ -49,7 +49,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 
 	<div class="row around-sm mb-xs-2 mb-lg-4">
 
-		<div class="col-xs-12 col-sm-6 ph-xs-0">
+		<div class="col-xs-12 col-sm-6">
 
 			<div class="faq">
 				<h4>Can I purchase the pro add-ons separately?</h4>
@@ -94,7 +94,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 
 		</div>
 
-		<div class="col-xs-12 col-sm-6 ph-xs-0">
+		<div class="col-xs-12 col-sm-6">
 
 			<div class="faq">
 				<h4>Do you offer a trial?</h4>
