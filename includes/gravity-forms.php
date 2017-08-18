@@ -89,7 +89,11 @@ function affwp_theme_get_signup() {
 
 	<section class="signup box" id="sign-up">
 
+		<?php /*
 	<h4 class="signup-header">Join <span><?php echo $subscriber_count; ?></span> others growing their business with AffiliateWP</h4>
+	*/ ?>
+	<h4 class="signup-header">Join <span>11,000+</span> others growing their business with AffiliateWP</h4>
+
 	<p class="signup-intro">We'll only notify you of new articles, special promotions and updates. No spam!</p>
 
 	<?php gravity_form( affwp_theme_signup_form_id(), false, false, false, '', true ); ?>
