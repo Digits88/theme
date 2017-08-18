@@ -33,12 +33,6 @@ function affwp_theme_home_hero_section() {
 
 						<h1 class="mb-xs-2">Easily create your full-featured affiliate program on WordPress</h1>
 						<p class="intro">You’re here because you want an affiliate marketing solution that works. AffiliateWP is an easy-to-use, reliable WordPress plugin that gives you the affiliate marketing tools you need to grow your business and make more money.</p>
-
-						<?php /*
-						<h1 class="ph-lg-5 mb-xs-2">Easy affiliate marketing for WordPress that <strong>works</strong></h1>
-						<p class="intro">You’re here because you want an affiliate marketing solution that works. AffiliateWP is an <strong>easy-to-use</strong>, <strong>reliable</strong> WordPress plugin that gives you the affiliate marketing tools you need to <strong>grow</strong> your business and <strong>make more money</strong>.</p>
-						*/ ?>
-
 						<div id="cta">
 							<a href="#section-pricing" class="scroll button button-large">Start earning more</a>
 						</div>
