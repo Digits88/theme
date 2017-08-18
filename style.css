@@ -1638,7 +1638,6 @@ textarea {
   border: 2px solid #f4f7f8;
   width: 100%;
   border-radius: 0;
-  -webkit-appearance: none;
 }
 select {
   border: 2px solid #f4f7f8;
@@ -1649,6 +1648,11 @@ input {
 input:focus,
 textarea:focus {
   outline: 0;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  -webkit-appearance: none;
 }
 input[type="checkbox"],
 input[type="radio"] {
