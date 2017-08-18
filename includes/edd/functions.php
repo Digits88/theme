@@ -444,7 +444,7 @@ function affwp_theme_can_become_affiliate() {
 	// reverse the array so it looks at oldest purchases first
 	$purchases = $purchases ? array_reverse( $purchases ) : '';
 
-	if ( $purchases ) {
+	if ( ! empty( $purchases ) ) {
 
 		foreach ( $purchases as $purchase ) {
 
