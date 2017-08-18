@@ -454,10 +454,6 @@ function affwp_theme_can_become_affiliate() {
 
 			if ( $downloads ) {
 
-				if ( current_user_can( 'manage_options' ) ) {
-					var_dump( $downloads );
-				}
-
 				foreach ( $downloads as $download ) {
 
 					if ( $download['id'] === affwp_theme_get_download_id() ) {
