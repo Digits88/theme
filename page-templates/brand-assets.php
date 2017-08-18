@@ -20,7 +20,7 @@ themedd_page_header(
 	<div class="row center-xs">
 		<div class="col-xs-12 col-sm-8">
 			<p class="mb-xs-4">Below are a few guidelines for using AffiliateWP’s brand resources, please take a moment to familiarize yourself with them. You can download individual assets in each section, or you can download everything all at once below.</p>
-			<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/all.zip'; ?>" class="button center-xs large">Download all assets</a>
+			<a href="<?php echo get_stylesheet_directory_uri() . '/affiliatewp-brand-assets/all.zip'; ?>" class="button center-xs button-large">Download all assets</a>
 		</div>
 	</div>
 </section>

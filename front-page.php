@@ -361,7 +361,7 @@ if ( $integrations->have_posts() ) : ?>
 		<?php endif; ?>
 
         <div class="center-xs" id="show-integrations">
-            <a href="#" class="button outline white large">See all <?php echo $integrations->found_posts; ?> supported integrations</a>
+            <a href="#" class="button outline white button-large">See all <?php echo $integrations->found_posts; ?> supported integrations</a>
         </div>
 
     </div>
