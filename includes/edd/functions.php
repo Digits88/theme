@@ -432,6 +432,11 @@ function affwp_theme_can_access_pro_add_ons() {
  */
 function affwp_theme_can_become_affiliate() {
 
+	// Return early if the customer is not logged in.
+	if ( ! is_user_logged_in() ) {
+		return;
+	}
+
 	$can_become_affiliate = false;
 	$purchase_date        = '';
 	$purchases            = edd_get_users_purchases( get_current_user_id(), -1, false, 'complete' );
