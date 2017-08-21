@@ -18,7 +18,7 @@ add_action( 'themedd_site_header_main', 'themedd_primary_menu' );
 function affwp_theme_edd_cart_link_position() {
 	return 'primary_menu';
 }
-add_filter( 'themedd_edd_cart_link_position', 'affwp_theme_edd_cart_link_position' );
+add_filter( 'themedd_edd_cart_position', 'affwp_theme_edd_cart_link_position' );
 
 /**
  * Hide the cart when on the pricing page
@@ -184,7 +184,7 @@ function affwp_theme_edd_cart_link_defaults( $defaults ) {
 
 	return $defaults;
 }
-add_filter( 'themedd_edd_cart_link_defaults', 'affwp_theme_edd_cart_link_defaults' );
+add_filter( 'themedd_edd_cart_defaults', 'affwp_theme_edd_cart_link_defaults' );
 
 
 /**

@@ -19,7 +19,7 @@ add_filter( 'edd_subscription_update_url', 'themedd_edd_recurring_update_url', 1
 /**
  * Remove sidebar download info
  */
-remove_action( 'themedd_sidebar_download', 'themedd_edd_download_info' );
+remove_action( 'themedd_edd_sidebar_download', 'themedd_edd_download_info' );
 
 /**
  * Remove download info from beginning of content
@@ -304,7 +304,7 @@ function affwp_theme_upgrade_or_purchase_modal() {
  * @since 1.0.0
  */
 function affwp_theme_remove_pricing_pro_addons() {
-	remove_action( 'themedd_sidebar_download', 'themedd_edd_pricing' );
+	remove_action( 'themedd_edd_sidebar_download', 'themedd_edd_pricing' );
 }
 add_action( 'template_redirect', 'affwp_theme_remove_pricing_pro_addons' );
 
@@ -369,7 +369,7 @@ function affwp_theme_edd_single_download_buttons() {
 	</aside>
 <?php
 }
-add_action( 'themedd_sidebar_download_start', 'affwp_theme_edd_single_download_buttons' );
+add_action( 'themedd_edd_sidebar_download_start', 'affwp_theme_edd_single_download_buttons' );
 
 /**
  * Supported integrations button
@@ -620,7 +620,7 @@ function affwp_theme_show_related_pro_add_ons() {
 
 	<?php
 }
-add_action( 'themedd_single_download_primary_end', 'affwp_theme_show_related_pro_add_ons' );
+add_action( 'themedd_edd_single_download_primary_end', 'affwp_theme_show_related_pro_add_ons' );
 
 /**
  * Remove the existing licenses tab content when "Manage Sites" or "View Upgrades" links are clicked

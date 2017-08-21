@@ -60,7 +60,7 @@ function affwp_theme_site_branding() {
 
    <?php
 }
-add_action( 'themedd_site_branding_before_site_title', 'affwp_theme_site_branding' );
+add_action( 'themedd_site_branding_site_title_before', 'affwp_theme_site_branding' );
 
 /**
  * Page header classes
