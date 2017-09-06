@@ -1109,7 +1109,7 @@ body .wrapper {
 }
 /* Header */
 #masthead {
-  background: transparent;
+  background-color: transparent;
 }
 .site-header-main {
   margin: 0 auto;
@@ -2675,15 +2675,8 @@ span.padlock {
   width: 1.5rem;
   height: 1.5rem;
 }
-#edd_terms_agreement {
-  margin-bottom: 2rem;
-}
-#edd_agree_to_terms {
-  margin-right: 0.5rem;
-}
-.no-sidebar .edd_empty_cart {
+.edd-empty-cart #edd_checkout_wrap {
   text-align: center;
-  display: block;
 }
 #edd_checkout_form_wrap span.edd-required-indicator {
   color: #a94442;
@@ -2728,6 +2721,12 @@ span.padlock {
 #edd-stripe-manage-cards > fieldset p:last-child,
 #edd_payment_mode_select p:last-child {
   margin-bottom: 0.5rem;
+}
+#edd_terms_agreement {
+  margin-bottom: 2rem;
+}
+#edd_agree_to_terms {
+  margin-right: 0.5rem;
 }
 #edd_simple_shipping_diff_address label {
   margin-bottom: 0;
@@ -2836,16 +2835,16 @@ span.card-type.off {
   display: none;
 }
 span.card-type.visa {
-  background: url(assets/images/icons/visa.gif ) no-repeat;
+  background: url(assets/images/icons/visa.gif) no-repeat;
 }
 span.card-type.mastercard {
-  background: url(assets/images/icons/mastercard.gif ) no-repeat;
+  background: url(assets/images/icons/mastercard.gif) no-repeat;
 }
 span.card-type.discover {
-  background: url(assets/images/icons/discover.gif ) no-repeat;
+  background: url(assets/images/icons/discover.gif) no-repeat;
 }
 span.card-type.amex {
-  background: url(assets/images/icons/americanexpress.gif ) no-repeat;
+  background: url(assets/images/icons/americanexpress.gif) no-repeat;
 }
 #edd_purchase_submit {
   margin-bottom: 0;
@@ -2983,7 +2982,7 @@ p.edd_error {
 }
 .edd-alert-info {
   background-color: #d9edf7;
-  border-color: #bce8f1;
+  border-color: #cbe3ef;
 }
 .edd-alert-info p,
 .edd-alert-info a {
@@ -3023,6 +3022,10 @@ p.edd_error {
 #edd-license-key-container-wrap {
   margin-bottom: 1rem;
 }
+#edd_sl_license_add_site_form span {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
 #edd_sl_license_add_site_form .edd-input {
   margin-bottom: 1rem;
 }
@@ -3031,13 +3034,13 @@ input[readonly] {
   border-color: #f4f4f4;
 }
 .edd-sl-active {
-  color: green;
+  color: #3c763d;
 }
 .edd-sl-inactive {
   color: gray;
 }
 .edd-sl-expired {
-  color: red;
+  color: #a94442;
 }
 .edd_sl_license_row .view-key-wrapper {
   position: relative;
@@ -3048,12 +3051,15 @@ input[readonly] {
   left: 0;
   top: 30px;
   z-index: 999;
-  border: 1px solid #ddd;
-  background: #f0f0f0;
-  padding: 4px;
-  width: 20em;
-  max-width: inherit;
-  text-align: center;
+  border: 2px solid #f4f7f8;
+  background: #fff;
+  padding: 1rem;
+  width: 24rem;
+  text-align: left;
+}
+.edd-sl-manage-license-key,
+.edd-sl-manage-license-product {
+  display: block;
 }
 #edd_user_commissions_unpaid,
 #edd_user_commissions_paid,
@@ -6708,6 +6714,9 @@ g.icon rect {
   .edd_discount_link {
     display: block;
   }
+  #edd_sl_show_renewal_form {
+    display: block;
+  }
 }
 @media only screen and (min-width: 768px) {
   .text-center-sm {
@@ -6763,8 +6772,12 @@ g.icon rect {
   .footer-widgets .widget {
     margin-bottom: 4rem;
   }
+  .author-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .author-avatar {
-    float: left;
     margin: 0 1.5rem 0 0;
   }
   .page-header {
@@ -7317,7 +7330,6 @@ g.icon rect {
   #edd_profile_personal_fieldset,
   #edd_profile_address_fieldset,
   #edd_profile_password_fieldset,
-  #edd_discount_code,
   #edd_checkout_user_info,
   #edd_register_account_fields,
   #edd_login_fields,
@@ -7331,12 +7343,21 @@ g.icon rect {
   #edd_payment_mode_select {
     padding: 2rem;
   }
+  #edd_discount_code {
+    padding: 1rem 2rem;
+  }
+  #edd_register_fields #edd_register_account_fields {
+    margin-bottom: 0;
+  }
   #edd_checkout_cart td,
   #edd_checkout_cart th {
     padding: 1rem 2rem;
   }
   .navCart {
     margin-left: 1rem;
+  }
+  #edd_sl_renewal_fields {
+    padding: 1rem 2rem;
   }
   .blog .page-header h1,
   .single-post h1 {

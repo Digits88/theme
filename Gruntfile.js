@@ -87,9 +87,10 @@ module.exports = function(grunt) {
 
 	// Autoprefixer
 	autoprefixer: {
-		your_target: {
+		main: {
 			files:{
-				'style.css': 'style.css'
+				'style.css': 'style.css',
+				'style.min.css': 'style.min.css'
 			},
 		},
 	},
@@ -132,7 +133,7 @@ module.exports = function(grunt) {
       css: {
         // compile CSS when any .less file is compiled in this theme and also the parent theme
         files: ['less/**/*.less', '../<%= pkg.parentTheme %>/assets/less/**/*.less'],
-        tasks: ['less:style', 'less:minify', 'autoprefixer:your_target']
+        tasks: ['less:style', 'less:minify', 'autoprefixer:main']
       },
 	  // Add banner
 	  addbanner: {
