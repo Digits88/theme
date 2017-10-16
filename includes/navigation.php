@@ -4,11 +4,18 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+ * Remove the default primary navigation
+ *
+ * @since 1.5.3
+ */
+remove_action( 'themedd_site_header_main', 'themedd_primary_menu' );
+
+/**
  * Add primary navigation where secondary navigation is located
  *
  * @since 1.0.0
  */
-add_action( 'themedd_site_header_main', 'themedd_primary_menu' );
+add_action( 'themedd_site_header_wrap', 'themedd_primary_menu' );
 
 /**
  * Add the cart to the primary navigation (defaults to the secondary menu)
@@ -164,7 +171,7 @@ add_filter( 'themedd_edd_cart_icon', 'affwp_theme_edd_cart_icon' );
 function affwp_themedd_edd_display_cart_options( $return ) {
 	return 'none';
 }
-add_filter( 'themedd_edd_display_cart_options', 'affwp_themedd_edd_display_cart_options' );
+add_filter( 'themedd_edd_cart_option', 'affwp_themedd_edd_display_cart_options' );
 
 
 /**
