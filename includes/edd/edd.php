@@ -17,16 +17,6 @@ function themedd_edd_recurring_update_url( $url, $subscription ) {
 add_filter( 'edd_subscription_update_url', 'themedd_edd_recurring_update_url', 10, 2 );
 
 /**
- * Remove sidebar download info
- */
-remove_action( 'themedd_edd_sidebar_download', 'themedd_edd_download_info' );
-
-/**
- * Remove download info from beginning of content
- */
-remove_action( 'themedd_entry_content_start', 'themedd_edd_download_info' );
-
-/**
  * Modify the rewrite option to include the download category
  * This will be moved into the custom functionality plugin at a later date
  *
