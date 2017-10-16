@@ -71,10 +71,6 @@ object[data$=".svg"] {
 // 89c2b2
 // 60B9B3
 
-// #page {
-// 	height: 100%;
-// }
-
 // make all svgs inside grid 100% wide
 img.wp-post-image[src$=".svg"] {
 	width: 100%;
@@ -89,13 +85,20 @@ img.wp-post-image[src$=".svg"] {
 }
 
 .button,
-button,
-input[type="submit"],
 #submit,
 input,
 textarea {
 	border-radius: @border-radius;
 }
+
+//.search-field,
+button.search-submit {
+	border-radius: none;
+}
+
+// li.search {
+// 	padding-top: 3rem;
+// }
 
 .notice {
 	background: @notice-background-color;

@@ -476,10 +476,10 @@ h2.widget-title {
   display: block;
 }
 /* Buttons */
-.button,
-button,
 input[type="submit"],
-#submit {
+button,
+#submit,
+.button {
   background: #60b9b3;
   color: #fff;
   cursor: pointer;
@@ -494,20 +494,19 @@ input[type="submit"],
       -ms-user-select: none;
           user-select: none;
   outline: none;
-  width: auto;
   line-height: 1.5rem;
 }
-.button:hover,
+input[type="submit"]:hover,
 button:hover,
-input[type=submit]:hover,
-#submit:hover {
+#submit:hover,
+.button:hover {
   text-decoration: none;
   color: #fff;
   background: #49a7a0;
   border: 2px solid #49a7a0;
 }
+input[type="submit"],
 #submit,
-input[type=submit],
 button,
 .button {
   font-size: 1.1rem;
@@ -518,10 +517,10 @@ button,
   padding: 0.5rem 1rem;
 }
 .button-large {
-  font-size: 1.4rem;
-  padding: 1rem 2.25rem;
+  font-size: 1.25rem;
+  padding: 1.25rem 2.5rem;
 }
-.button-full-width {
+.button-block {
   width: 100%;
   display: block;
 }
@@ -1159,9 +1158,14 @@ body .wrapper {
 }
 .site-footer ul {
   margin-left: 0;
+  margin-top: 0;
+}
+.site-footer ul ul {
+  margin-left: 1rem;
 }
 .site-footer li {
   list-style-type: none;
+  margin-bottom: 0;
 }
 .site-footer a {
   color: #a2a2a2;
@@ -1198,30 +1202,44 @@ a:hover {
   color: #384047;
 }
 /* Search */
+#mobile-menu .search-form {
+  padding: 1rem;
+}
 .search-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  border-right: none;
+}
+.search-submit svg * {
+  stroke: #717f86;
 }
 .search-form label {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 8em;
-          flex: 1 0 8em;
   margin-bottom: 0;
-}
-.search-submit {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-}
-input[type="search"] {
   width: 100%;
 }
-input.search-submit {
-  width: auto;
+.search-form .search-field {
+  border-right: none;
+  font-size: 1rem;
+}
+.search-form .search-field,
+.search-form .search-submit {
+  border: none;
+  background: #f4f7f8;
+}
+.search-form .search-submit {
+  padding: 0.8125rem;
+}
+.search-form .search-submit svg {
+  vertical-align: inherit;
+}
+.site-header-menu .search-form .search-field,
+.site-header-menu .search-form .search-submit {
+  padding: 0.5rem;
+}
+.site-header-menu .primary-menu .search-form {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /* Accessibility */
 .says,
@@ -1278,19 +1296,34 @@ dd {
 }
 ul,
 ol {
-  margin: 0 0 1.62rem 1rem;
+  margin: 0 0 1.62rem 2rem;
   padding: 0;
+}
+ul li,
+ol li {
+  margin-bottom: 1rem;
+  line-height: 1.62rem;
+}
+ul li img,
+ol li img {
+  margin-top: 1rem;
 }
 ul {
   list-style: disc;
 }
 ol {
   list-style: decimal;
-  margin-left: 1.62rem;
+  margin-left: 2rem;
+}
+li > ul {
+  list-style: circle;
+}
+li > ul ul {
+  list-style: square;
 }
 li > ul,
 li > ol {
-  margin-bottom: 0;
+  margin: 1rem 0 0 2rem;
 }
 table,
 th,
@@ -1313,7 +1346,7 @@ td {
 }
 th {
   border-width: 0 2px 2px 0;
-  font-weight: 500;
+  font-weight: 600;
   background: #fcfcfc;
 }
 td {
@@ -1325,7 +1358,7 @@ td {
 }
 .box,
 .comment-respond {
-  padding: 2rem;
+  padding: 1rem;
   border: 2px solid #f4f4f4;
   background: #fcfcfc;
 }
@@ -1334,6 +1367,9 @@ td {
   margin-bottom: 0;
 }
 /* Posts and Pages */
+.sticky {
+  position: relative;
+}
 .entry-meta,
 .entry-footer {
   font-size: 1rem;
@@ -1626,6 +1662,9 @@ aside li {
 .entry-content .gallery {
   margin-bottom: 4rem;
 }
+.wp-caption-text {
+  font-style: italic;
+}
 .gallery-item {
   width: 100%;
 }
@@ -1633,7 +1672,7 @@ aside li {
   margin: 0 auto;
   display: block;
 }
-.gallery-item figcaption {
+.gallery-item .gallery-caption {
   margin: 0.5rem 0 2rem 0;
   text-align: center;
 }
@@ -1647,8 +1686,11 @@ textarea {
   color: #717f86;
   background: #fff;
   border: 2px solid #f4f7f8;
-  width: 100%;
   border-radius: 0;
+}
+form input,
+textarea {
+  width: 100%;
 }
 select {
   border: 2px solid #f4f7f8;
@@ -1662,7 +1704,12 @@ textarea:focus {
 }
 input[type="text"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+input[type="url"],
+input[type="password"],
+textarea {
   -webkit-appearance: none;
 }
 input[type="checkbox"],
@@ -2160,6 +2207,7 @@ section.account .wrapper {
 .primary-menu {
   display: none;
 }
+#site-header-secondary-menu,
 .site-header-wrap .site-header-menu {
   display: none;
 }
@@ -2186,6 +2234,7 @@ section.account .wrapper {
 }
 .main-navigation li {
   position: relative;
+  margin-bottom: 0;
 }
 .main-navigation ul ul {
   display: none;
@@ -2217,18 +2266,12 @@ section.account .wrapper {
 .post-navigation .nav-links div {
   margin-bottom: 1rem;
 }
-.post-navigation a {
-  display: block;
-}
+.post-navigation a,
 .post-navigation span {
   display: block;
 }
 .post-navigation .meta-nav {
   color: #a2a2a2;
-}
-.post-navigation a:hover .post-title,
-.post-navigation a:focus .post-title {
-  color: #384047;
 }
 #menu-toggle-wrap {
   display: -webkit-box;
@@ -2264,6 +2307,20 @@ section.account .wrapper {
   overflow: hidden;
   max-height: 0;
 }
+#mobile-menu .sub-menu a {
+  padding-left: 2rem;
+}
+#mobile-menu ul {
+  display: none;
+  list-style-type: none;
+}
+#mobile-menu ul .sub-menu a {
+  padding-left: 4rem;
+}
+#mobile-menu li {
+  position: relative;
+  margin-bottom: 0;
+}
 #mobile-menu a {
   display: block;
   line-height: 1.5;
@@ -2279,18 +2336,9 @@ section.account .wrapper {
 #mobile-menu .current_page_ancestor > a {
   color: #384047;
 }
-#mobile-menu li {
-  position: relative;
-}
-#mobile-menu ul {
-  display: none;
-}
 #mobile-menu .menu-item-has-children > a {
   margin: 0;
   padding-right: 1rem;
-}
-#mobile-menu .sub-menu a {
-  padding-left: 2rem;
 }
 .dropdown-toggle {
   background-color: transparent;
@@ -2326,7 +2374,19 @@ section.account .wrapper {
   line-height: 32px;
   padding: 0.5rem 1rem;
 }
+.secondary-navigation ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -0.5rem;
+}
+.secondary-navigation ul li {
+  margin-bottom: 0;
+}
 /* Easy Digital Downloads */
+.edd-submit {
+  width: auto;
+}
 .edd-cart-ajax-alert {
   display: none;
 }
@@ -2456,12 +2516,11 @@ a.edd-add-to-cart .edd-add-to-cart-label,
   overflow: hidden;
   width: 100%;
   margin-bottom: 4rem;
+  font-size: 1rem;
 }
 h3.edd_download_title {
   margin-top: 0;
-}
-.has-download-meta .edd_download_title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .downloadFooter {
   margin: auto 0 0 0;
@@ -2501,12 +2560,15 @@ h3.edd_download_title {
 .eddDownloadMeta-authorAvatar + .eddDownloadMeta-authorName {
   margin-left: 0.5rem;
 }
-.eddDownloadMeta-beforeTitle,
-.eddDownloadMeta-afterTitle {
-  margin-bottom: 1.5rem;
+.eddDownloadMeta-beforeTitle .eddDownloadMeta,
+.eddDownloadMeta-afterTitle .eddDownloadMeta {
+  margin-bottom: 1rem;
 }
-.eddDownloadMeta-after {
+.eddDownloadMeta-after .eddDownloadMeta {
   margin-top: 2rem;
+}
+.eddDownloadMeta-afterTitle .edd_download_title {
+  margin-bottom: 0.5rem;
 }
 .edd_download_title a {
   color: #384047;
@@ -2531,7 +2593,6 @@ h3.edd_download_title {
   padding: 0.25rem 0;
   line-height: 1.62;
   cursor: pointer;
-  font-size: 1rem;
   margin-bottom: 0;
 }
 .edd_price_options li label {
@@ -2585,7 +2646,7 @@ span.edd_price {
 .widget_edd_product_details .edd_download_purchase_form:first-child {
   margin-top: 2rem;
 }
-.edd_download_purchase_form + .edd-meta {
+.widget_edd_product_details .edd-meta {
   margin: 1rem 0 0 0;
   font-size: 0.875rem;
 }
@@ -2660,9 +2721,6 @@ span.padlock {
 #edd-discount {
   margin-bottom: 1rem;
 }
-#edd_checkout_form_wrap .edd-apply-discount {
-  vertical-align: top;
-}
 #edd-discount-code-wrap,
 #edd_show_discount {
   margin-bottom: 0;
@@ -2675,7 +2733,7 @@ span.padlock {
   width: 1.5rem;
   height: 1.5rem;
 }
-.edd-empty-cart #edd_checkout_wrap {
+.no-sidebar.edd-empty-cart #edd_checkout_wrap {
   text-align: center;
 }
 #edd_checkout_form_wrap span.edd-required-indicator {
@@ -2726,7 +2784,18 @@ span.padlock {
   margin-bottom: 2rem;
 }
 #edd_agree_to_terms {
+  margin-top: 0.375rem;
   margin-right: 0.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+#edd_show_terms + .edd-terms-agreement {
+  margin-top: 0.5rem;
+}
+.edd-terms-agreement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 #edd_simple_shipping_diff_address label {
   margin-bottom: 0;
@@ -2736,9 +2805,6 @@ span.padlock {
 }
 #edd_purchase_form_wrap .edd-select-small {
   width: auto;
-}
-#edd_show_terms + .edd-terms-agreement {
-  margin-top: 0.5rem;
 }
 #edd_profile_submit_wrap {
   margin-bottom: 0;
@@ -2762,17 +2828,22 @@ span.padlock {
 .edd_cart_actions {
   text-align: right;
 }
+.edd_cart_actions .edd-item-quantity {
+  margin-right: 0.5rem;
+}
 #edd_final_total_wrap {
   text-align: center;
-  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 #edd-purchase-button-wrap {
   position: relative;
 }
+#edd_final_total_wrap,
 #edd-purchase-button {
-  width: 100%;
   font-size: 1.5rem;
-  padding: 1rem;
+}
+#edd-purchase-button {
+  padding: 1.25rem 2.5rem;
 }
 .edd_cart_header_row,
 .edd_cart_item {
@@ -2815,8 +2886,7 @@ span.padlock {
   display: inline-block;
   vertical-align: middle;
 }
-label[for=edds-confirm-update-default],
-label[for=edd_agree_to_terms] {
+label[for=edds-confirm-update-default] {
   width: 90%;
   vertical-align: top;
 }
@@ -2849,6 +2919,25 @@ span.card-type.amex {
 #edd_purchase_submit {
   margin-bottom: 0;
 }
+.edd-amazon-profile-wrapper {
+  font-size: 1rem;
+}
+.edd-amazon-profile-name {
+  font-weight: bold;
+}
+.edd-amazon-logout a {
+  cursor: pointer;
+}
+.edd-amazon-fields #edd_cc_address {
+  display: none;
+}
+#edd-amazon-wallet-box,
+#edd-amazon-address-box {
+  height: 228px;
+}
+#edd-amazon-address-box {
+  margin-bottom: 2rem;
+}
 .edd-checkout-distraction-free .site-branding {
   margin-left: auto;
   margin-right: auto;
@@ -2876,6 +2965,10 @@ span.card-type.amex {
 }
 #edd_purchase_receipt_products ul {
   margin-bottom: 0;
+  font-size: 1rem;
+}
+#edd_purchase_receipt_products ul li {
+  margin-bottom: 0;
 }
 #edd_purchase_receipt,
 #edd_purchase_receipt_products {
@@ -2899,18 +2992,17 @@ span.card-type.amex {
 #edd_purchase_receipt_products tr td:first-child {
   border-right: 2px solid #f4f7f8;
 }
-#edd_purchase_receipt_products ul {
-  font-size: 1rem;
-}
 .edd_purchase_receipt_product_name {
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 .edd_purchase_receipt_files li:last-child {
   margin-bottom: 0;
 }
 .navCart {
-  -ms-flex-item-align: center;
-      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .navCart-icon {
   position: relative;
@@ -2925,7 +3017,7 @@ span.card-type.amex {
   fill: #fff;
 }
 .navCart-icon + * {
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
 }
 .main-navigation .navCart {
   padding: 0.25rem 0;
@@ -3021,6 +3113,9 @@ p.edd_error {
 }
 #edd-license-key-container-wrap {
   margin-bottom: 1rem;
+}
+#edd_sl_show_renewal_form_wrap + #edd-license-key-container-wrap {
+  margin-top: 0.5rem;
 }
 #edd_sl_license_add_site_form span {
   margin-bottom: 0.5rem;
@@ -3162,6 +3257,7 @@ a.delete {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 0;
 }
 .downloadAuthor-name,
 .downloadDetails-name {
@@ -3186,6 +3282,7 @@ a.delete {
 .edd-item-quantity {
   width: 4rem;
   margin-bottom: 0.5rem;
+  padding: 0.5rem;
 }
 .edd-select {
   vertical-align: middle;
@@ -3193,6 +3290,17 @@ a.delete {
 .edd-select ~ .button {
   font-size: 0.875rem;
   padding: 0.25rem 0.75rem;
+}
+.edd-cs-voted {
+  margin-bottom: 0;
+}
+.edd-cs-voted,
+.edd-cs-vote-description {
+  font-style: italic;
+  font-size: 0.875rem;
+}
+.edd-cs-vote-description {
+  margin-bottom: 1rem;
 }
 .edd_errors {
   color: #222;
@@ -3251,12 +3359,13 @@ img.wp-post-image[src$=".svg"] {
   padding-top: 0;
 }
 .button,
-button,
-input[type="submit"],
 #submit,
 input,
 textarea {
   border-radius: 4px;
+}
+button.search-submit {
+  border-radius: none;
 }
 .notice {
   background: #60b9b3;
@@ -5120,6 +5229,7 @@ section.feature-highlights {
 .table-option li {
   border-bottom: 1px solid #f4f7f8;
   padding: 0.5rem 0;
+  margin-bottom: 0;
   font-size: 1rem;
   list-style-type: none;
 }
@@ -6766,11 +6876,19 @@ g.icon rect {
   .footer-widgets .widget-column {
     padding: 2rem;
   }
-  .site-footer ul {
-    margin-bottom: 0;
-  }
   .footer-widgets .widget {
     margin-bottom: 4rem;
+  }
+  .site-header-menu .search-form {
+    margin-left: 1rem;
+    width: 11rem;
+  }
+  .site-header-menu .search-field {
+    font-size: 0.875rem;
+  }
+  .box,
+  .comment-respond {
+    padding: 2rem;
   }
   .author-info {
     display: -webkit-box;
@@ -7131,23 +7249,14 @@ g.icon rect {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin-left: -1rem;
-    margin-right: -1rem;
   }
   .site-branding {
     margin-right: 2rem;
   }
-  .main-navigation ul.menu:after,
-  .secondary-navigation ul.menu:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-  }
   .site-header-menu {
     display: block;
   }
+  #site-header-secondary-menu,
   .site-header-wrap .site-header-menu {
     display: block;
   }
@@ -7178,9 +7287,6 @@ g.icon rect {
   }
   .main-navigation li:hover > a {
     color: #384047;
-  }
-  .secondary-navigation li {
-    float: left;
   }
   .secondary-navigation a {
     padding: 0.5rem;
@@ -7300,6 +7406,9 @@ g.icon rect {
     display: -ms-flexbox;
     display: flex;
     font-size: 0.875rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   #site-header-secondary-menu a {
     color: #717f86;
@@ -7328,9 +7437,17 @@ g.icon rect {
   .edd_download_columns_5 .edd_download {
     width: 33.333333333%;
   }
-  #edd-discount {
-    width: 70%;
+  .edd-discount-code-field-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .edd-discount-code-field-wrap #edd-discount {
     margin-bottom: 0;
+  }
+  .edd-discount-code-field-wrap .edd-apply-discount {
+    width: auto;
+    margin-left: 0.5rem;
   }
   #edd_profile_personal_fieldset,
   #edd_profile_address_fieldset,
@@ -7389,9 +7506,6 @@ g.icon rect {
   }
   section.testimonials .testimonial {
     margin: 2rem;
-  }
-  .site-header-wrap + .site-header-menu {
-    display: none;
   }
   .main-navigation .primary-menu {
     margin-right: 0;
@@ -7837,11 +7951,7 @@ g.icon rect {
     height: 40000px;
     z-index: 1;
   }
-  .single-download a.edd-add-to-cart.edd-has-js,
-  .single-download .edd_go_to_checkout {
-    width: 100%;
-  }
-  .single-download .edd_purchase_submit_wrapper .edd-add-to-cart.edd-no-js {
+  .single-download .widget_edd_product_details .button {
     width: 100%;
   }
   .edd_download_columns_4 .edd_download {
