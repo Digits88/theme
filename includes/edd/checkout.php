@@ -109,10 +109,12 @@ function affwp_edd_terms_agreement() {
 	if ( isset( $edd_options['show_agree_to_terms'] ) ) : ?>
 
 	<fieldset id="edd_terms_agreement">
-		<input name="edd_agree_to_terms" class="required" type="checkbox" id="edd_agree_to_terms" value="1" />
-		<label for="edd_agree_to_terms">
-			I acknowledge and agree that I<?php echo $extra_text; ?> have read the <?php echo '<a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">purchase terms and refund policy</a>'; ?>
-		</label>
+		<div class="edd-terms-agreement">
+			<input name="edd_agree_to_terms" class="required" type="checkbox" id="edd_agree_to_terms" value="1" />
+			<label for="edd_agree_to_terms">
+				I acknowledge and agree that I<?php echo $extra_text; ?> have read the <?php echo '<a href="#refund-policy" class="popup-content" data-effect="mfp-move-from-bottom">purchase terms and refund policy</a>'; ?>
+			</label>
+		</div>
 	</fieldset>
 
 	<?php // seems to only work when placed here ?>
