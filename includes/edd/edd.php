@@ -331,6 +331,7 @@ add_filter( 'edd_purchase_link_defaults', 'affwp_theme_edd_purchase_link_default
  * @since 1.0.0
  */
 function affwp_theme_edd_single_download_buttons() {
+	$download_id = get_the_ID();
 
 	?>
 	<aside class="widget">
@@ -339,13 +340,13 @@ function affwp_theme_edd_single_download_buttons() {
 			/**
 			 * The "Download Now" button on a pro add-on page
 			 */
-			if ( has_term( 'pro', 'download_category' ) && edd_get_download_files( get_the_ID() ) ) :
+			if ( has_term( 'pro', 'download_category' ) && edd_get_download_files( $download_id ) ) :
 
 			$has_ultimate_license     = in_array( 3, affwp_theme_get_users_price_ids() );
 			$has_professional_license = in_array( 2, affwp_theme_get_users_price_ids() );
 
 			if ( $has_ultimate_license || $has_professional_license ) : ?>
-				<a href="<?php echo affwp_theme_get_add_on_download_url( get_the_ID() ); ?>" class="button download">Download Now</a>
+				<a href="<?php echo affwp_theme_get_add_on_download_url( $download_id ); ?>" class="button download">Download Now</a>
 			<?php else :  ?>
 				<a href="#no-access" class="button popup-content download" data-effect="mfp-move-from-bottom">Download Now</a>
 				<?php affwp_theme_upgrade_or_purchase_modal();
@@ -359,8 +360,8 @@ function affwp_theme_edd_single_download_buttons() {
 			/**
 			 * The "Free Download" button on a single download page
 			 */
-			if ( has_term( 'official-free', 'download_category', get_the_ID() ) ) {
-				themedd_edd_purchase_link();
+			if ( has_term( 'official-free', 'download_category', $download_id ) ) {
+				themedd_edd_purchase_link( $download_id );
 			}
 		?>
 
