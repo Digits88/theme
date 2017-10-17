@@ -54,10 +54,35 @@ function affwp_account_menu( $items, $args ) {
 		return $items . affwp_theme_nav_account();
 	}
 
+	if ( 'mobile-menu' === $args->menu_id ) {
+		return $items . affwp_theme_nav_account();
+	}
+
     return $items;
 }
-add_filter( 'themedd_wp_nav_menu_items', 'affwp_account_menu', 10, 2 );
+// This has a priority of 1 so it appears before the nav cart in the menu
+add_filter( 'wp_nav_menu_items', 'affwp_account_menu', 1, 2 );
 
+/**
+ * Modify the EDD cart link defaults
+ *
+ * @since 1.0.0
+ */
+function affwp_theme_edd_cart_link_defaults( $defaults ) {
+	
+	$cart_items = function_exists( 'edd_get_cart_contents' ) ? edd_get_cart_contents() : '';
+
+	if ( $cart_items ) {
+		$defaults['text_before'] = '<span class="cart-icon-text">Checkout</span>';
+	} else {
+		$defaults['text_before'] = '<span class="cart-icon-text">Buy</span>';
+	}
+
+	return $defaults;
+}
+add_filter( 'themedd_edd_cart_defaults', 'affwp_theme_edd_cart_link_defaults' );
+
+	
 /**
  * Append account to main navigation
  *
@@ -174,24 +199,6 @@ function affwp_themedd_edd_display_cart_options( $return ) {
 add_filter( 'themedd_edd_cart_option', 'affwp_themedd_edd_display_cart_options' );
 
 
-/**
- * Modify the EDD cart link defaults
- *
- * @since 1.0.0
- */
-function affwp_theme_edd_cart_link_defaults( $defaults ) {
-
-	$cart_items = function_exists( 'edd_get_cart_contents' ) ? edd_get_cart_contents() : '';
-
-	if ( $cart_items ) {
-		$defaults['text_before'] = '<span class="cart-icon-text">Checkout</span>';
-	} else {
-		$defaults['text_before'] = '<span class="cart-icon-text">Buy</span>';
-	}
-
-	return $defaults;
-}
-add_filter( 'themedd_edd_cart_defaults', 'affwp_theme_edd_cart_link_defaults' );
 
 
 /**
