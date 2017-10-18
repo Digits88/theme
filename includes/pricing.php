@@ -617,7 +617,7 @@ function affwp_theme_pricing_table() {
 										$text = 'Checkout';
 									} else {
 										$button_link = $download_url . '&amp;edd_options[price_id]=' . $price_id;
-										$text = 'Sign up';
+										$text = 'Purchase';
 									}
 								?>
 								<a class="button" href="<?php echo $button_link; ?>"><?php echo $text; ?></a>
@@ -658,7 +658,7 @@ function affwp_theme_pricing_table() {
 										$text = 'Checkout';
 									} else {
 										$button_link = $download_url . '&amp;edd_options[price_id]=' . $price_id;
-										$text = 'Sign up';
+										$text = 'Purchase';
 									}
 								?>
 								<a class="button" href="<?php echo $button_link; ?>"><?php echo $text; ?></a>
@@ -700,7 +700,7 @@ function affwp_theme_pricing_table() {
 										$text = 'Checkout';
 									} else {
 										$button_link = $download_url . '&amp;edd_options[price_id]=' . $price_id;
-										$text = 'Sign up';
+										$text = 'Purchase';
 									}
 								?>
 								<a class="button" href="<?php echo $button_link; ?>"><?php echo $text; ?></a>
