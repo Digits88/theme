@@ -117,30 +117,6 @@ themedd_page_header(
 				<div class="grid-item-inner">
 
 					<div class="grid-item-image">
-						<img class="profile" alt="Rami Abraham" src="<?php echo get_stylesheet_directory_uri() . '/images/about/rami-abraham.jpg'; ?>">
-					</div>
-
-					<div class="about-details">
-						<h3 class="grid-item-title">Rami Abraham</h3>
-						<a href="http://ramiabraham.com" target="_blank">ramiabraham.com</a><br/>
-						<a href="https://twitter.com/ramiabraham" class="twitter-follow-button" data-show-count="false">Follow @ramiabraham</a>
-					</div>
-
-					<div class="grid-item-content">
-						<p>Rami is a WordPress developer that’s been building with WordPress since version 2.8. Prior to using WordPress, he built sites with static html, and a variety of server-side languages. He loves making cool things with AffiliateWP.</p>
-
-						<p>JavaScript and bad dad jokes are what he knows best.</p>
-
-						<p>He helps organize WordCamp Lancaster, and is an adequate Lego craftsman.</p>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="grid-item col-xs-12 col-sm-6 col-md-4 mb-xs-2 mb-sm-0">
-				<div class="grid-item-inner">
-
-					<div class="grid-item-image">
 						<img class="profile" alt="Lisa Gibson" src="<?php echo get_stylesheet_directory_uri() . '/images/about/lisa-gibson.jpg'; ?>">
 					</div>
 
