@@ -124,7 +124,7 @@ $count_official_free_add_ons = function_exists( 'affwp_theme_get_add_on_count' )
 
 			<div class="faq">
 				<h4>Will AffiliateWP work on WordPress.com?</h4>
-				<p>No, AffiliateWP will not work on WordPress.com. It only works on self-hosted WordPress installs.</p>
+				<p>Yes, you can use AffiliateWP on WordPress.com if you have a Business plan, which allows third-party plugins to be installed. If you do not have a Business plan on WordPress.com, AffiliateWP cannot be used.</p>
 			</div>
 
 			<div class="faq">
