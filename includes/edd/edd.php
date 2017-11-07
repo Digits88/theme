@@ -100,32 +100,6 @@ function affwp_theme_edd_subscription_update_url( $url, $object ) {
 }
 //add_filter( 'edd_subscription_update_url', 'affwp_theme_edd_subscription_update_url', 10, 2 );
 
-
-/**
- * Optimizely revenue tracking
- *
- * @since 1.0.0
- */
-function affwp_theme_edd_optimizely_revenue_tracking() {
-
-	$session = edd_get_purchase_session();
-	if( ! $session || ! edd_is_success_page() ) {
-		return;
-	}
-
-	$payment_id = edd_get_purchase_id_by_key( $session['purchase_key'] );
-
-?>
-<script>
-	var price = <?php echo edd_get_payment_amount( $payment_id ); ?>;
-	window.optimizely = window.optimizely || [];
-	window.optimizely.push(['trackEvent', 'purchase_complete', {'revenue': price * 100}]);
-</script>
-<?php
-}
-add_action( 'wp_head', 'affwp_theme_edd_optimizely_revenue_tracking');
-
-
 /**
  * Add learn more link to pro add-ons
  *
