@@ -34,6 +34,14 @@ jQuery(document).ready(function($) {
 		$(this).addClass( 'can-hover' );
 	});
 
+	// Checkout form login toggle.
+	$('.edd-checkout-show-login-form').on('click',function(e) {
+		e.preventDefault();
+		$(this).parents( ".edd-show-login-wrap" ).siblings( "#edd_login_fields" ).show();
+		$( "#edd_login_fields #edd_user_login" ).focus();
+		$(this).parents( ".edd-show-login-wrap" ).hide();
+	});
+	
 });
 ;(function (root, factory) {
   if (typeof define === 'function' && define.amd) {

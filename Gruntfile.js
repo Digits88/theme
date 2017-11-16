@@ -106,9 +106,10 @@ module.exports = function(grunt) {
                     'Author: <%= pkg.author %>\n' +
                     'Author URI: <%= pkg.author_uri %>\n' +
                     'Description: <%= pkg.description %>\n' +
+                    'Version: <%= pkg.version %>\n' +
                     'License: GNU General Public License\n' +
                     'License URI: license.txt\n' +
-					'Text Domain: <%= pkg.text_domain %>\n' +
+					          'Text Domain: <%= pkg.text_domain %>\n' +
                     '*/',
             linebreak: true
           },

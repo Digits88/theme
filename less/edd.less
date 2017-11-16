@@ -28,3 +28,34 @@
 .edd-icon-lock path {
 	fill: @secondary-color;
 }
+
+// Hide the login form at checkout.
+#edd_purchase_form #edd_login_fields {
+	display: none;
+}
+
+// Remove bottom margin
+#edd-show-login {
+	margin-bottom: 0;
+}
+
+// Hide spinner for now
+#edd-user-login-submit .edd-loading-ajax.edd-loading {
+	display: none;
+}
+
+// Style the same as other elements
+.edd-show-login-wrap {
+    background: @light-grey-alt;
+    border: 2px solid @border-light-grey-alt;
+	padding: 1rem;
+	margin-bottom: 2rem;
+}
+
+.media-mixin(@break) when (@break = @screen-sm-min) {
+
+	.edd-show-login-wrap {
+		padding: 1rem 2rem;
+	}
+
+}

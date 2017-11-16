@@ -5,6 +5,7 @@ Theme URI: https://themedd.com
 Author: AffiliateWP
 Author URI: https://affiliatewp.com
 Description: The theme for AffiliateWP
+Version: 1.5.6
 License: GNU General Public License
 License URI: license.txt
 Text Domain: affiliatewp
@@ -1202,16 +1203,19 @@ a:hover {
   color: #384047;
 }
 /* Search */
+#mobile-menu .menu-item-search {
+  display: block;
+}
 #mobile-menu .search-form {
   padding: 1rem;
+}
+.search-submit svg * {
+  stroke: #717f86;
 }
 .search-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-.search-submit svg * {
-  stroke: #717f86;
 }
 .search-form label {
   margin-bottom: 0;
@@ -3301,6 +3305,9 @@ a.delete {
 }
 .edd-cs-vote-description {
   margin-bottom: 1rem;
+}
+.edd-wl-wish-lists .edd-wish-list li::after {
+  width: auto;
 }
 .edd_errors {
   color: #222;
@@ -6243,6 +6250,21 @@ section.used-by:hover .slick-initialized + .slick-used-by-nav {
 .edd-icon-lock path {
   fill: #60b9b3;
 }
+#edd_purchase_form #edd_login_fields {
+  display: none;
+}
+#edd-show-login {
+  margin-bottom: 0;
+}
+#edd-user-login-submit .edd-loading-ajax.edd-loading {
+  display: none;
+}
+.edd-show-login-wrap {
+  background: #fcfcfc;
+  border: 2px solid #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
 .ct-line {
   fill: none;
   stroke-width: 4px;
@@ -7534,6 +7556,9 @@ g.icon rect {
   }
   .slick-nav {
     display: block;
+  }
+  .edd-show-login-wrap {
+    padding: 1rem 2rem;
   }
   .main-navigation ul ul:before {
     top: -9px;

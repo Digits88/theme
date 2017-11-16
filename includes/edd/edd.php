@@ -4,6 +4,28 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+ * Place checkout login form behind a toggle link.
+ */
+function affwp_theme_checkout_login_toggle() {
+
+	$show_login_form = edd_get_option( 'show_register_form', 'none' );
+
+	if ( ! is_user_logged_in() && ( 'login' === $show_login_form || 'both' === $show_login_form ) ) {
+		?>
+		<div class="edd-show-login-wrap">
+			<p id="edd-show-login">
+				<span class="edd-checkout-login-title">Do you already have an account?</span>
+				<span class="edd-checkout-login-toggle"><a href="#" class="edd-checkout-show-login-form">Click to log in</a></span>
+			</p>
+		</div>
+		<?php
+	}
+}
+remove_action( 'edd_purchase_form_login_fields', 'edd_get_login_fields' );
+add_action( 'edd_checkout_form_top', 'edd_get_login_fields', 2 );
+add_action( 'edd_checkout_form_top', 'affwp_theme_checkout_login_toggle', 1 );
+
+/**
  * EDD Recurring
  * Modify URL to update payment method
  *
