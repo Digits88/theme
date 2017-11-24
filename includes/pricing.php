@@ -595,7 +595,7 @@ function affwp_theme_pricing_table() {
 	                        <ul class="mb-xs-2">
 	                            <li class="pricing">
 									<?php echo affwp_theme_show_price( 'professional' ); ?>
-									<span class="length">per year</span>
+									<span class="length">1st year</span>
 								</li>
 
 								<li class="feature price">
@@ -641,7 +641,7 @@ function affwp_theme_pricing_table() {
 
 								<li class="pricing">
 									<?php echo affwp_theme_show_price( 'plus' ); ?>
-									<span class="length">per year</span>
+									<span class="length">1st year</span>
 								</li>
 								<li class="feature"><strong><a href="#modal-offical-free-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $count_official_free_add_ons; ?> official free add-ons</a></strong></li>
 
@@ -682,7 +682,7 @@ function affwp_theme_pricing_table() {
 
 								<li class="pricing">
 									<?php echo affwp_theme_show_price( 'personal' ); ?>
-									<span class="length">per year</span>
+									<span class="length">1st year</span>
 								</li>
 
 								<li class="feature"><strong><a href="#modal-offical-free-add-ons" class="popup-content" data-effect="mfp-move-from-bottom"><?php echo $count_official_free_add_ons; ?> official free add-ons</a></strong></li>
